@@ -81,6 +81,17 @@ Each stage ends with a result that unlocks the next one.
 - Archive: proverbs, folktales, history, Ajami manuscripts.
 - Raise from investors, using revenue and dataset size as proof.
 
+## Budget (stages 0–1)
+
+Run on free tiers until there is grant money or revenue.
+
+- **AI drafts:** generated in batches and stored, not run live. Google Cloud Translation's free tier (500k characters a month) or a free LLM tier covers thousands of sentences. No model of our own until we have the data.
+- **Voice recording:** the browser's built-in recorder. Free.
+- **Database and file storage:** Supabase free tier (500 MB database, 1 GB storage). 500 concepts with audio in three languages fits easily.
+- **Hosting:** Vercel free tier. Move to the paid plan (about $20/month) once the site earns money, since the free tier is for non-commercial use.
+- **Images:** open-licensed sources and our own phone photos (see `research.md`).
+- **Real costs:** CAC registration, the domain, and paying language leads and reviewers.
+
 ## Numbers we track from day one
 
 - Concepts live, per language
