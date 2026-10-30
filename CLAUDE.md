@@ -39,7 +39,7 @@ A Hausa archive that grows into Nigeria's language archive (Hausa, then Yoruba a
 
 ## Suggested stack
 
-Next.js + Supabase on Vercel free tiers. Supabase Storage for images and audio.
+Next.js + Supabase (database and auth) + Cloudflare R2 (images and audio, 10 GB free). Host on Vercel's free tier to start; move to Cloudflare or Vercel Pro once it earns money, since Vercel's free tier is non-commercial. Google Cloud Translation for batch AI drafts. Weekly database backups to Google Drive. Step-by-step order in `docs/guide.md`.
 
 ## Open questions
 

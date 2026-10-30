@@ -87,8 +87,10 @@ Run on free tiers until there is grant money or revenue.
 
 - **AI drafts:** generated in batches and stored, not run live. Google Cloud Translation's free tier (500k characters a month) or a free LLM tier covers thousands of sentences. No model of our own until we have the data.
 - **Voice recording:** the browser's built-in recorder. Free.
-- **Database and file storage:** Supabase free tier (500 MB database, 1 GB storage). 500 concepts with audio in three languages fits easily.
-- **Hosting:** Vercel free tier. Move to the paid plan (about $20/month) once the site earns money, since the free tier is for non-commercial use.
+- **Database:** Supabase free tier (500 MB). Text is small; this lasts a long time.
+- **Images and audio:** Cloudflare R2 (10 GB free, no download fees).
+- **Hosting:** Vercel free tier to start. Move to Cloudflare (free, commercial use allowed) or Vercel Pro once the site earns money.
+- **Backups:** weekly database export to Google Drive.
 - **Images:** open-licensed sources and our own phone photos (see `research.md`).
 - **Real costs:** CAC registration, the domain, and paying language leads and reviewers.
 
