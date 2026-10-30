@@ -12,17 +12,21 @@ Writing style: direct, plain prose. No AI-sounding phrasing, no rhetorical scaff
 
 A Hausa archive that grows into Nigeria's language archive (Hausa, then Yoruba and Igbo, later Fulfulde, Kanuri, Tiv, Efik).
 
-1. Dictionary: look up any Hausa word, get English, audio, tone marks, dialect tags.
-2. Visual encyclopedia: short entries with photos for concrete things (animals, food, clothing, tools, places).
-3. API for AI companies: a correction layer (glossaries, tones, morphology, dialects), not general translation.
-4. Services: human-checked translation, subtitles, voiceovers.
-5. Archive: proverbs (karin magana), folktales (tatsuniyoyi), history, Ajami manuscripts, novels with author permission.
+1. Dictionary and picture encyclopedia, built around concepts: one concept has a photo and a name in each language, with audio, tone marks, dialect tags and sentences. Hausa to Igbo works without going through English.
+2. Fix-the-AI tasks: an AI drafts a translation, a native speaker corrects the text, records it in their own voice and marks the AI's mistakes. This is the main contributor task.
+3. Contributors: people sign up for their language and get paid per accepted item. Reviewers check everything first.
+4. Datasets: verified data licensed to AI companies.
+5. Talent: strong contributors get referred for translation, subtitle and voiceover jobs. We take a commission.
+6. API for AI companies: a correction layer (glossaries, tones, morphology, dialects), not general translation.
+7. Archive: proverbs (karin magana), folktales (tatsuniyoyi), history, Ajami manuscripts, novels with author permission.
 
 ## Decisions so far
 
 - The real business is verified, structured language data. The dictionary and archive are how it gets collected.
-- Launch Hausa only. Build the platform multi-language from day one (`language` field on everything). Add Yoruba and Igbo later, each with a native-speaker lead who owns quality.
-- Pick a brand that isn't Hausa-specific. Name candidates so far: Rumbu, Taska (both Hausa-only, so maybe for the Hausa section).
+- Launch with Hausa, Yoruba and Igbo. Founder leads and reviews Hausa; a native-speaker lead owns Yoruba and another owns Igbo. Build multi-language from day one (`language` field on everything) so Fulfulde, Kanuri, Tiv, Ijaw, Efik and others can be added, each with its own lead.
+- Web app first. AI helps draft; humans decide. Our own model only once we have the data.
+- Talent referrals start manual (founder matches contributors to jobs) before any marketplace feature.
+- Pick a brand that works for all Nigerian languages, not just Hausa. Rumbu and Taska are Hausa-only, so they could name the Hausa section at most.
 - Company: register Shadow Labs Ltd with CAC (about ₦30k–50k, 1–2 weeks). Run the archive as a Shadow Labs product. Spin it out as its own Ltd only when raising money or needing separate contracts.
 - Open layer (free, grant-funded) vs paid layer (verified audio, parallel sentences, dialect-tagged speech sold to companies).
 - Funding order: grants, then paid client work, then data buyers who commit before collection. Investors later.
@@ -31,7 +35,7 @@ A Hausa archive that grows into Nigeria's language archive (Hausa, then Yoruba a
 
 ## First milestone
 
-500 entries with photos and audio, in themed collections (animals, food, clothing and crafts, household items). Then launch, post on X/Instagram, and use it as proof for grant applications.
+500 concepts with photos and audio in Hausa, Yoruba and Igbo, in themed collections (animals, food, clothing and crafts, household items). Then launch, post on X/Instagram, and use it as proof for grant applications. Full staged plan in `docs/plan.md`.
 
 ## Suggested stack
 
