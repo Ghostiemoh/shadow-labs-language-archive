@@ -1,6 +1,6 @@
-# Web app
+# The app
 
-Next.js 15 + Supabase. Picture dictionary, Fix-the-AI tasks, review queue, contributor accounts.
+Next.js 15 + Supabase, live at https://yarasude.vercel.app. Picture dictionary, Fix-the-AI tasks, review queue, contributor accounts.
 
 ## Run locally
 

@@ -1,12 +1,13 @@
 import { createServerClient } from "@supabase/ssr";
+import { SUPABASE_URL, SUPABASE_KEY } from "@/lib/env";
 import { NextResponse, type NextRequest } from "next/server";
 
 // Keeps the Supabase session cookie fresh on every request.
 export async function middleware(request: NextRequest) {
   let response = NextResponse.next({ request });
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+    SUPABASE_URL,
+    SUPABASE_KEY,
     {
       cookies: {
         getAll: () => request.cookies.getAll(),

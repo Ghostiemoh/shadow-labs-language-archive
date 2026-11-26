@@ -1,4 +1,4 @@
-export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Shadow Labs Archive";
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Yarasude";
 export const SHOW_DRAFTS = process.env.NEXT_PUBLIC_SHOW_DRAFTS !== "false";
 
 // Which statuses the public site shows.

@@ -29,7 +29,7 @@ Images and audio go in R2, not Supabase Storage. R2 gives 10 GB free instead of 
 
 ## Week 2: the base app (Claude)
 
-Built 26 Nov 2026 in `web/`. Images and audio use Supabase Storage for now; R2 comes when storage nears the 1 GB free limit. Photos: 29 animals from iNaturalist; the Admin page searches Wikimedia Commons for the rest. See `web/README.md`.
+Built 26 Nov 2026 (repo root, live at yarasude.vercel.app). Images and audio use Supabase Storage for now; R2 comes when storage nears the 1 GB free limit. Photos: 29 animals from iNaturalist; the Admin page searches Wikimedia Commons for the rest. See `docs/app.md`.
 
 - [x] Create the Next.js app and connect it to Supabase.
 - [x] Database tables: languages, concepts, names per language, sentences, audio, images (with license, source and credit), contributors, reviews, payouts.
