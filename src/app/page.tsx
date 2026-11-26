@@ -3,6 +3,7 @@ import { getCollections, getConcepts, getLanguages, getStats } from "@/lib/data"
 import { ConceptCard } from "@/components/ConceptCard";
 import { SearchBox } from "@/components/SearchBox";
 import { StatusBadge } from "@/components/Badges";
+import { Mic } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -40,7 +41,7 @@ export default async function Home() {
             A picture dictionary of Hausa, Yoruba and Igbo. Where native speakers meet machine precision.
           </p>
         </div>
-        <p className="mx-auto max-w-6xl px-4 sm:px-6 pb-3 text-[0.7rem] text-cream/60">Ìjàpá · photo: Marius Burger, CC0, via iNaturalist</p>
+        <p className="mx-auto max-w-6xl px-4 sm:px-6 pb-3 text-[0.75rem] text-cream/90">Ìjàpá · photo: Marius Burger, CC0, via iNaturalist</p>
       </section>
 
       {/* Look-up: search first, with one word shown as a specimen. */}
@@ -195,7 +196,7 @@ export default async function Home() {
             <div className="mt-4 flex flex-wrap gap-2 text-[0.8rem]">
               <span className="rounded-[3px] bg-clay-soft text-clay-deep font-semibold px-2 py-1">Grammar</span>
               <span className="rounded-[3px] bg-clay-soft text-clay-deep font-semibold px-2 py-1">Dialect</span>
-              <span className="rounded-[3px] bg-sand text-ink-soft px-2 py-1">● 0:03 recording</span>
+              <span className="inline-flex items-center gap-1 rounded-[3px] bg-sand text-ink-soft px-2 py-1"><Mic aria-hidden className="size-3.5" /> 0:03 recording</span>
             </div>
             <figcaption className="mt-5 text-[0.78rem] text-muted">Illustrative example of the task screen.</figcaption>
           </figure>

@@ -121,3 +121,7 @@ body {
   .rise { animation: none; }
   *, *::before, *::after { transition-duration: 0ms !important; }
 }
+
+/* Interaction basics: pointer cursor on real controls (Tailwind v4 dropped it), no 300ms tap delay. */
+button:not(:disabled), [role="button"], summary, label[for] { cursor: pointer; }
+html { touch-action: manipulation; }

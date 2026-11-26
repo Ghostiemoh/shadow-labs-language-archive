@@ -5,6 +5,7 @@ import "./globals.css";
 import { SITE_NAME, SHOW_DRAFTS } from "@/lib/site";
 import { getViewer } from "@/lib/data";
 import { SearchBox } from "@/components/SearchBox";
+import { NavLinks } from "@/components/NavLinks";
 
 // Charis SIL: made by SIL for languages with stacked tone marks and hooked letters.
 // The vietnamese subset carries the dot-below vowels (ẹ ọ ụ ị); latin-ext carries ɓ ɗ ƙ.
@@ -31,40 +32,39 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   ];
   return (
     <html lang="en" className={`${charis.variable} ${familjen.variable}`}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-dvh flex flex-col">
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-surface">Skip to content</a>
-        <header className="border-b border-line bg-paper/95 backdrop-blur-[2px] sticky top-0 z-20">
+        <header className="border-b border-line bg-paper">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 h-16 flex items-center gap-6">
-            <Link href="/" className="flex items-baseline gap-2 shrink-0" aria-label={`${SITE_NAME} home`}>
+            <Link href="/" className="flex items-center gap-2 shrink-0 min-h-11" aria-label={`${SITE_NAME} home`}>
               <span className="display text-[1.45rem] tracking-tight">{SITE_NAME}</span>
               <span aria-hidden className="word text-clay text-lg leading-none">ẹ̀</span>
             </Link>
-            <nav aria-label="Main" className="hidden md:flex items-center gap-5 text-[0.95rem] text-ink-soft">
-              {nav.map((n) => <Link key={n.href} href={n.href} className="hover:text-brand py-2">{n.label}</Link>)}
+            <nav aria-label="Main" className="hidden md:flex items-center gap-4 text-[0.95rem] text-ink-soft">
+              <NavLinks items={nav} variant="desktop" />
             </nav>
             <div className="ml-auto flex items-center gap-3">
               <div className="hidden lg:block w-60"><SearchBox compact /></div>
               {profile ? (
-                <Link href="/me" className="btn btn-ghost !min-h-10 text-sm">{profile.display_name || "Me"}</Link>
+                <Link href="/me" className="btn btn-ghost text-sm">{profile.display_name || "Me"}</Link>
               ) : (
-                <Link href="/login" className="btn btn-primary !min-h-10 text-sm">Sign in</Link>
+                <Link href="/login" className="btn btn-primary text-sm">Sign in</Link>
               )}
             </div>
           </div>
           {/* Phones: the same links, scrollable, never hidden behind a menu. */}
           <nav aria-label="Main" className="md:hidden border-t border-line overflow-x-auto">
             <div className="flex gap-1 px-3 text-[0.95rem] text-ink-soft whitespace-nowrap">
-              {nav.map((n) => <Link key={n.href} href={n.href} className="px-2.5 py-2.5 hover:text-brand">{n.label}</Link>)}
-              <Link href="/search" className="px-2.5 py-2.5 hover:text-brand">Search</Link>
+              <NavLinks items={[...nav, { href: "/search", label: "Search" }]} variant="mobile" />
             </div>
           </nav>
+          {SHOW_DRAFTS && (
+            <p className="bg-ochre-soft text-[0.85rem] text-ink-soft px-4 py-2 text-center">
+              Preview. Names marked <b className="text-ink">AI draft</b> have not yet been checked by a native speaker.
+            </p>
+          )}
         </header>
 
-        {SHOW_DRAFTS && (
-          <p className="bg-ochre-soft text-[0.85rem] text-ink-soft px-4 py-2 text-center">
-            Preview. Names marked <b className="text-ink">AI draft</b> have not yet been checked by a native speaker.
-          </p>
-        )}
 
         <main id="main" className="flex-1">{children}</main>
 

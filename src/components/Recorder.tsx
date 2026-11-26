@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { Mic, RotateCcw, Square } from "lucide-react";
 
 // Records the speaker's voice in the browser. Calls onReady with the audio blob once stopped.
 export function Recorder({ onReady, maxSeconds = 20 }: { onReady: (blob: Blob | null) => void; maxSeconds?: number }) {
@@ -46,18 +47,21 @@ export function Recorder({ onReady, maxSeconds = 20 }: { onReady: (blob: Blob | 
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      {state === "idle" && <button type="button" onClick={start} className="btn btn-clay">● Record</button>}
+      {state === "idle" && <button type="button" onClick={start} className="btn btn-clay"><Mic aria-hidden className="size-4" /> Record</button>}
       {state === "recording" && (
-        <button type="button" onClick={stop} className="btn btn-clay animate-pulse">■ Stop · 0:{String(secs).padStart(2, "0")}</button>
+        <span className="sr-only" aria-live="polite">Recording</span>
+      )}
+      {state === "recording" && (
+        <button type="button" onClick={stop} className="btn btn-clay"><Square aria-hidden className="size-3.5 fill-current animate-pulse motion-reduce:animate-none" /> Stop · 0:{String(secs).padStart(2, "0")}</button>
       )}
       {state === "done" && url && (
         <>
           <audio src={url} controls className="h-10" />
-          <button type="button" onClick={reset} className="btn btn-ghost text-sm">Record again</button>
+          <button type="button" onClick={reset} className="btn btn-ghost text-sm"><RotateCcw aria-hidden className="size-4" /> Record again</button>
         </>
       )}
       {state === "error" && (
-        <span className="text-sm text-clay">Microphone blocked. Allow microphone access in your browser and try again.</span>
+        <span role="alert" className="text-sm text-clay-deep">Microphone blocked. Allow microphone access in your browser and try again.</span>
       )}
     </div>
   );

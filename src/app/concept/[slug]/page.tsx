@@ -5,6 +5,7 @@ import { AudioButton } from "@/components/AudioButton";
 import { LangChip, StatusBadge } from "@/components/Badges";
 import { ConceptCard } from "@/components/ConceptCard";
 import { AddName } from "@/components/AddName";
+import { MicOff } from "lucide-react";
 
 export const revalidate = 30;
 
@@ -58,7 +59,7 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
                         return (
                           <li key={n.id} className="flex items-center gap-x-4 gap-y-1 flex-wrap">
                             {voice ? <AudioButton src={voice.url} label={`Hear ${n.form}`} /> : (
-                              <span className="size-11 shrink-0 grid place-items-center rounded-full border border-dashed border-line-strong text-muted text-[0.65rem] text-center leading-tight" title="No recording yet">no<br />voice</span>
+                              <span className="size-11 shrink-0 grid place-items-center rounded-full border border-dashed border-line-strong text-muted" title="No recording yet"><MicOff aria-hidden className="size-4" /><span className="sr-only">No recording yet</span></span>
                             )}
                             <span className="word text-[length:var(--step-4)] font-bold leading-none">{n.form}</span>
                             <span className="flex items-center gap-3">

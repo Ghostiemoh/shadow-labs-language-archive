@@ -77,7 +77,7 @@ export function AddName({ conceptId, language, languageName, signedIn, lexemes }
         <span className="label">Your voice (optional)</span>
         <Recorder onReady={setBlob} />
       </div>
-      {msg && <p className="text-sm text-clay">{msg}</p>}
+      {msg && <p role="alert" className="text-sm text-clay-deep">{msg}</p>}
       <div className="flex gap-2">
         <button disabled={busy} className="btn btn-primary">{busy ? "Saving…" : "Send for review"}</button>
         <button type="button" onClick={() => setOpen(false)} className="btn btn-ghost">Cancel</button>

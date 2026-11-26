@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
   const [mode, setMode] = useState<"in" | "up">("in");
@@ -10,6 +11,7 @@ export default function Login() {
   const [name, setName] = useState("");
   const [msg, setMsg] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [show, setShow] = useState(false);
   const router = useRouter();
 
   async function submit(e: React.FormEvent) {
@@ -39,17 +41,25 @@ export default function Login() {
       <form onSubmit={submit} className="mt-6 card p-5 grid gap-4">
         {mode === "up" && (
           <label className="grid gap-1"><span className="label">Name shown on your recordings</span>
-            <input className="input" required value={name} onChange={(e) => setName(e.target.value)} /></label>
+            <input className="input" required autoComplete="nickname" value={name} onChange={(e) => setName(e.target.value)} /></label>
         )}
         <label className="grid gap-1"><span className="label">Email</span>
           <input className="input" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" /></label>
-        <label className="grid gap-1"><span className="label">Password</span>
-          <input className="input" type="password" required minLength={8} value={password} onChange={(e) => setPassword(e.target.value)}
-            autoComplete={mode === "in" ? "current-password" : "new-password"} /></label>
-        {msg && <p className="text-sm text-clay">{msg}</p>}
-        <button disabled={busy} className="btn btn-primary justify-center">{busy ? "…" : mode === "in" ? "Sign in" : "Create account"}</button>
+        <div className="grid gap-1">
+          <label htmlFor="password" className="label">Password{mode === "up" && " (at least 8 characters)"}</label>
+          <div className="relative">
+            <input id="password" className="input pr-12" type={show ? "text" : "password"} required minLength={8} value={password}
+              onChange={(e) => setPassword(e.target.value)} autoComplete={mode === "in" ? "current-password" : "new-password"} />
+            <button type="button" onClick={() => setShow(!show)} aria-label={show ? "Hide password" : "Show password"} aria-pressed={show}
+              className="absolute right-0 top-0 size-11 grid place-items-center text-muted hover:text-ink">
+              {show ? <EyeOff aria-hidden className="size-5" /> : <Eye aria-hidden className="size-5" />}
+            </button>
+          </div>
+        </div>
+        {msg && <p role="alert" className="text-sm text-clay-deep">{msg}</p>}
+        <button disabled={busy} className="btn btn-primary justify-center">{busy ? (mode === "in" ? "Signing in…" : "Creating account…") : mode === "in" ? "Sign in" : "Create account"}</button>
       </form>
-      <button onClick={() => { setMode(mode === "in" ? "up" : "in"); setMsg(null); }} className="mt-4 text-sm text-brand">
+      <button onClick={() => { setMode(mode === "in" ? "up" : "in"); setMsg(null); }} className="mt-4 btn btn-ghost text-sm">
         {mode === "in" ? "New here? Create an account" : "Already have an account? Sign in"}
       </button>
     </div>

@@ -9,7 +9,7 @@ export function SearchBox({ compact = false, defaultValue = "" }: { compact?: bo
         type="search"
         defaultValue={defaultValue}
         placeholder={compact ? "Search a word" : "akuya, ewúrẹ́, ewu or goat"}
-        className={`input word ${compact ? "!min-h-10 !py-1.5 text-[0.95rem]" : "!min-h-14 !text-xl pl-4 pr-28"}`}
+        className={`input word ${compact ? "!py-1.5 text-[0.95rem]" : "!min-h-14 !text-xl pl-4 pr-28"}`}
         autoComplete="off"
         enterKeyHint="search"
       />

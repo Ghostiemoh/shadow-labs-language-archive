@@ -97,7 +97,7 @@ export function TaskEditor({ task, languageName, userId, agreementSigned, nextId
         <input className="input" value={note} onChange={(e) => setNote(e.target.value)} placeholder="e.g. Kano usage; in Sokoto people say …" />
       </label>
 
-      {msg && <p className="text-clay text-sm">{msg}</p>}
+      {msg && <p role="alert" className="text-clay-deep text-sm">{msg}</p>}
       <div className="flex flex-wrap gap-3">
         <button disabled={busy} className="btn btn-primary">{busy ? "Sending…" : "Submit for review"}</button>
         {nextId && <Link href={`/tasks/${nextId}`} className="btn btn-ghost">Skip</Link>}
