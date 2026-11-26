@@ -20,9 +20,9 @@ export function AddName({ conceptId, language, languageName, signedIn, lexemes }
   const router = useRouter();
 
   if (!signedIn)
-    return <Link href="/login" className="mt-3 inline-block text-sm text-indigo">Speak {languageName}? Sign in to add a name or record it →</Link>;
+    return <Link href="/login" className="mt-3 inline-block text-sm text-brand">Speak {languageName}? Sign in to add a name or record it →</Link>;
   if (!open)
-    return <button onClick={() => setOpen(true)} className="mt-3 text-sm text-indigo font-semibold">+ Add a name or record it</button>;
+    return <button onClick={() => setOpen(true)} className="mt-3 text-sm text-brand font-semibold">+ Add a name or record it</button>;
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();

@@ -20,7 +20,7 @@ export default async function TaskPage({ params }: { params: Promise<{ id: strin
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10">
-      <Link href={`/tasks?lang=${task.target_language}`} className="text-sm text-indigo">← All {lang?.name} tasks</Link>
+      <Link href={`/tasks?lang=${task.target_language}`} className="text-sm text-brand">← All {lang?.name} tasks</Link>
       <div className="mt-4 card overflow-hidden">
         <div className="grid sm:grid-cols-[180px_1fr]">
           <div className="bg-line/60 aspect-square sm:aspect-auto">
@@ -30,7 +30,7 @@ export default async function TaskPage({ params }: { params: Promise<{ id: strin
           <div className="p-5">
             <p className="label">Translate into {lang?.name}</p>
             <p className="mt-2 display text-[length:var(--step-2)]">“{task.source_text}”</p>
-            {task.concepts && <Link href={`/concept/${task.concepts.slug}`} className="mt-2 inline-block text-sm text-indigo">Concept: {task.concepts.english}</Link>}
+            {task.concepts && <Link href={`/concept/${task.concepts.slug}`} className="mt-2 inline-block text-sm text-brand">Concept: {task.concepts.english}</Link>}
           </div>
         </div>
       </div>

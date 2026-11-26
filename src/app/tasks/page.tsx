@@ -29,7 +29,7 @@ export default async function Tasks({ searchParams }: { searchParams: Promise<{ 
           <div>
             <div className="text-sm text-muted">Example</div>
             <div className="mt-1 text-lg">“The goat is eating grass.”</div>
-            <div className="mt-1 word text-xl text-indigo">Akuya tana cin ciyawa.</div>
+            <div className="mt-1 word text-xl text-brand">Akuya tana cin ciyawa.</div>
           </div>
           <Link href="/login" className="btn btn-primary">Sign in to start</Link>
         </div>
@@ -47,7 +47,7 @@ export default async function Tasks({ searchParams }: { searchParams: Promise<{ 
     <div className="mx-auto max-w-5xl px-4 py-12">
       {intro}
       {!profile?.agreement_signed_at && (
-        <p className="mt-6 card p-4 bg-ochre/10 text-sm">Accept the contribution agreement on <Link href="/me" className="text-indigo underline">your account page</Link> before submitting tasks.</p>
+        <p className="mt-6 card p-4 bg-ochre/10 text-sm">Accept the contribution agreement on <Link href="/me" className="text-brand underline">your account page</Link> before submitting tasks.</p>
       )}
       <div className="mt-8 flex flex-wrap gap-2">
         {languages.map((l) => (
@@ -60,7 +60,7 @@ export default async function Tasks({ searchParams }: { searchParams: Promise<{ 
           <h2 className="font-semibold">You started these</h2>
           <ul className="mt-2 grid gap-2">
             {(mine ?? []).map((t) => (
-              <li key={t.id}><Link href={`/tasks/${t.id}`} className="card p-3 flex items-center gap-3 hover:border-indigo"><LangChip code={t.target_language} />{t.source_text}</Link></li>
+              <li key={t.id}><Link href={`/tasks/${t.id}`} className="card p-3 flex items-center gap-3 hover:border-brand"><LangChip code={t.target_language} />{t.source_text}</Link></li>
             ))}
           </ul>
         </section>
@@ -71,10 +71,10 @@ export default async function Tasks({ searchParams }: { searchParams: Promise<{ 
         <ul className="mt-3 grid sm:grid-cols-2 gap-3">
           {(open ?? []).map((t) => (
             <li key={t.id}>
-              <Link href={`/tasks/${t.id}`} className="card p-4 block hover:border-indigo h-full">
+              <Link href={`/tasks/${t.id}`} className="card p-4 block hover:border-brand h-full">
                 <div className="flex items-center gap-2 text-xs text-muted"><LangChip code={t.target_language} /> sentence</div>
                 <div className="mt-2">{t.source_text}</div>
-                {t.ai_draft && <div className="mt-1 word text-indigo/80">{t.ai_draft}</div>}
+                {t.ai_draft && <div className="mt-1 word text-brand/80">{t.ai_draft}</div>}
               </Link>
             </li>
           ))}

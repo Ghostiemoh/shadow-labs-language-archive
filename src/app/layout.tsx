@@ -40,7 +40,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <span aria-hidden className="word text-clay text-lg leading-none">ẹ̀</span>
             </Link>
             <nav aria-label="Main" className="hidden md:flex items-center gap-5 text-[0.95rem] text-ink-soft">
-              {nav.map((n) => <Link key={n.href} href={n.href} className="hover:text-indigo py-2">{n.label}</Link>)}
+              {nav.map((n) => <Link key={n.href} href={n.href} className="hover:text-brand py-2">{n.label}</Link>)}
             </nav>
             <div className="ml-auto flex items-center gap-3">
               <div className="hidden lg:block w-60"><SearchBox compact /></div>
@@ -54,8 +54,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {/* Phones: the same links, scrollable, never hidden behind a menu. */}
           <nav aria-label="Main" className="md:hidden border-t border-line overflow-x-auto">
             <div className="flex gap-1 px-3 text-[0.95rem] text-ink-soft whitespace-nowrap">
-              {nav.map((n) => <Link key={n.href} href={n.href} className="px-2.5 py-2.5 hover:text-indigo">{n.label}</Link>)}
-              <Link href="/search" className="px-2.5 py-2.5 hover:text-indigo">Search</Link>
+              {nav.map((n) => <Link key={n.href} href={n.href} className="px-2.5 py-2.5 hover:text-brand">{n.label}</Link>)}
+              <Link href="/search" className="px-2.5 py-2.5 hover:text-brand">Search</Link>
             </div>
           </nav>
         </header>
@@ -69,28 +69,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <main id="main" className="flex-1">{children}</main>
 
         <div className="weave" aria-hidden />
-        <footer className="bg-indigo-deep text-indigo-soft">
+        <footer className="bg-brand-deep text-brand-soft">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 grid gap-10 sm:grid-cols-[1.4fr_1fr_1fr]">
             <div className="max-w-sm">
               <div className="display text-2xl text-surface">{SITE_NAME}</div>
-              <p className="mt-3 leading-relaxed text-indigo-soft/80">
+              <p className="mt-3 leading-relaxed text-brand-soft/80">
                 Hausa, Yoruba and Igbo first. Fulfulde, Kanuri, Tiv, Ijaw and Efik next, each with its own native-speaker lead.
               </p>
             </div>
             <div className="grid gap-2 content-start">
-              <div className="eyebrow !text-indigo-soft/60">Use it</div>
+              <div className="eyebrow !text-brand-soft/60">Use it</div>
               <Link href="/browse" className="hover:text-surface">Browse collections</Link>
               <Link href="/search" className="hover:text-surface">Search</Link>
               <Link href="/about#licenses" className="hover:text-surface">Licences and credits</Link>
             </div>
             <div className="grid gap-2 content-start">
-              <div className="eyebrow !text-indigo-soft/60">Build it</div>
+              <div className="eyebrow !text-brand-soft/60">Build it</div>
               <Link href="/contribute" className="hover:text-surface">Become a contributor</Link>
               <Link href="/tasks" className="hover:text-surface">Fix-the-AI tasks</Link>
               <Link href="/about#data" className="hover:text-surface">Data for research and industry</Link>
             </div>
           </div>
-          <div className="border-t border-surface/10 text-center py-4 text-xs text-indigo-soft/60">A Shadow Labs project · Abuja</div>
+          <div className="border-t border-surface/10 text-center py-4 text-xs text-brand-soft/60">A Shadow Labs project · Abuja</div>
         </footer>
       </body>
     </html>

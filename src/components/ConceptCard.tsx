@@ -22,7 +22,7 @@ export function ConceptCard({ concept, languages }: { concept: Concept; language
         )}
       </div>
       <div className="pt-2.5 pb-1">
-        <div className="text-[0.82rem] text-muted group-hover:text-indigo">{concept.english}</div>
+        <div className="text-[0.82rem] text-muted group-hover:text-brand">{concept.english}</div>
         <dl className="mt-1 grid gap-0.5">
           {languages.map((l) => {
             const name = concept.lexemes?.find((x) => x.language === l.code);

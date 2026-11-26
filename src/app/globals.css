@@ -2,27 +2,34 @@
 
 /*
   Yarasude — proud, warm, scholarly.
-  Adire indigo and clay-pot terracotta on warm paper. Neutrals are tinted toward clay (hue ~70)
+  Clay Archive: clay-red field and cream, after the AI Philosophy reference. Neutrals tinted toward clay (hue ~70)
   so surfaces feel sun-warmed, not grey. Words are set in Charis SIL, made for languages like these.
 */
 @theme {
-  --color-ink: oklch(0.22 0.025 268);
-  --color-ink-soft: oklch(0.36 0.02 268);
-  --color-muted: oklch(0.50 0.025 60);
-  --color-line: oklch(0.89 0.022 75);
-  --color-line-strong: oklch(0.80 0.03 70);
-  --color-paper: oklch(0.972 0.014 80);
-  --color-surface: oklch(0.988 0.008 80);
-  --color-sand: oklch(0.94 0.024 78);
+  /* "Clay Archive" palette — derived from the AI Philosophy reference: a clay-red field, cream type,
+     ochre data markers, warm ink. Neutrals tinted toward clay (hue ~30–80). */
+  --color-ink: oklch(0.20 0.02 30);
+  --color-ink-soft: oklch(0.36 0.022 30);
+  --color-muted: oklch(0.47 0.03 40);
+  --color-line: oklch(0.88 0.025 70);
+  --color-line-strong: oklch(0.78 0.035 55);
+  --color-paper: oklch(0.965 0.02 80);
+  --color-surface: oklch(0.985 0.012 80);
+  --color-sand: oklch(0.925 0.03 72);
 
-  --color-indigo: oklch(0.33 0.115 268);
-  --color-indigo-deep: oklch(0.25 0.085 268);
-  --color-indigo-soft: oklch(0.93 0.025 268);
+  /* Brand: the field colour. Hex on purpose: it must match the halftone image's background exactly. */
+  --color-brand: #82221e;
+  --color-brand-deep: oklch(0.30 0.10 27);
+  --color-brand-soft: oklch(0.93 0.035 40);
+  --color-cream: #f2e2cd;
+  --color-ochre: oklch(0.76 0.14 72);
+  --color-ochre-soft: oklch(0.94 0.045 85);
+
+  /* Language tags only */
+  --color-indigo: oklch(0.36 0.115 268);
   --color-clay: oklch(0.55 0.15 40);
   --color-clay-deep: oklch(0.46 0.14 38);
   --color-clay-soft: oklch(0.93 0.035 45);
-  --color-ochre: oklch(0.74 0.135 78);
-  --color-ochre-soft: oklch(0.94 0.045 85);
   --color-leaf: oklch(0.46 0.085 155);
   --color-leaf-soft: oklch(0.94 0.03 155);
 
@@ -60,17 +67,18 @@ body {
 
 /* Any text in Hausa, Yoruba or Igbo. Generous leading so stacked tone marks and dots never clip. */
 .word { font-family: var(--font-serif); line-height: 1.3; font-feature-settings: "kern", "liga"; letter-spacing: -0.005em; }
-.display { font-family: var(--font-serif); font-weight: 700; line-height: 1.08; letter-spacing: -0.015em; text-wrap: balance; }
+.display { font-family: var(--font-sans); font-weight: 500; line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance; }
 .prose-measure { max-width: 66ch; }
 
 /* Small capitals label: museum-catalogue voice for language names, sections, metadata. */
 .eyebrow { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
 
 /* One structural nod to strip-woven cloth: a thin band, used only at section seams. */
+.halftone-markers li::before { content: ""; display: inline-block; width: 8px; height: 8px; background: var(--color-ochre); margin-right: 8px; vertical-align: 1px; }
 .weave {
   height: 8px;
   background-image: repeating-linear-gradient(90deg,
-    var(--color-indigo) 0 22px, var(--color-paper) 22px 25px,
+    var(--color-brand) 0 22px, var(--color-paper) 22px 25px,
     var(--color-clay) 25px 41px, var(--color-paper) 41px 44px,
     var(--color-ochre) 44px 50px, var(--color-paper) 50px 53px);
 }
@@ -87,23 +95,23 @@ body {
 }
 .btn:active { transform: translateY(1px); }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; }
-.btn-primary { background: var(--color-indigo); color: var(--color-surface); }
-.btn-primary:hover { background: var(--color-indigo-deep); }
+.btn-primary { background: var(--color-brand); color: var(--color-surface); }
+.btn-primary:hover { background: var(--color-brand-deep); }
 .btn-ghost { border: 1px solid var(--color-line-strong); background: transparent; color: var(--color-ink); }
-.btn-ghost:hover { border-color: var(--color-indigo); color: var(--color-indigo); }
+.btn-ghost:hover { border-color: var(--color-brand); color: var(--color-brand); }
 .btn-clay { background: var(--color-clay); color: var(--color-surface); }
 .btn-clay:hover { background: var(--color-clay-deep); }
-.link { color: var(--color-indigo); text-decoration: underline; text-decoration-color: color-mix(in oklch, var(--color-indigo) 30%, transparent); text-underline-offset: 4px; }
-.link:hover { text-decoration-color: var(--color-indigo); }
+.link { color: var(--color-brand); text-decoration: underline; text-decoration-color: color-mix(in oklch, var(--color-brand) 30%, transparent); text-underline-offset: 4px; }
+.link:hover { text-decoration-color: var(--color-brand); }
 
 .input {
   width: 100%; min-height: 44px; border: 1px solid var(--color-line-strong); background: var(--color-surface);
   border-radius: 4px; padding: 10px 12px; font-size: 1rem; color: var(--color-ink);
 }
 .input::placeholder { color: color-mix(in oklch, var(--color-muted) 80%, transparent); }
-.input:focus { outline: 2px solid var(--color-indigo); outline-offset: 1px; border-color: transparent; }
+.input:focus { outline: 2px solid var(--color-brand); outline-offset: 1px; border-color: transparent; }
 .label { font-size: var(--step--1); font-weight: 600; color: var(--color-ink-soft); }
-:focus-visible { outline: 2px solid var(--color-indigo); outline-offset: 2px; }
+:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
 
 /* One orchestrated entrance on the hero; nothing else moves on load. */
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }

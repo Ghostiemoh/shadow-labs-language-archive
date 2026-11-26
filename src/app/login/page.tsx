@@ -49,7 +49,7 @@ export default function Login() {
         {msg && <p className="text-sm text-clay">{msg}</p>}
         <button disabled={busy} className="btn btn-primary justify-center">{busy ? "…" : mode === "in" ? "Sign in" : "Create account"}</button>
       </form>
-      <button onClick={() => { setMode(mode === "in" ? "up" : "in"); setMsg(null); }} className="mt-4 text-sm text-indigo">
+      <button onClick={() => { setMode(mode === "in" ? "up" : "in"); setMsg(null); }} className="mt-4 text-sm text-brand">
         {mode === "in" ? "New here? Create an account" : "Already have an account? Sign in"}
       </button>
     </div>

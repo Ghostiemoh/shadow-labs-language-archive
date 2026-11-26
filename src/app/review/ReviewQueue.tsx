@@ -45,8 +45,8 @@ export function ReviewQueue({ items: initial }: { items: QueueItem[] }) {
       <p className="text-sm text-muted">{items.length} waiting</p>
       {err && <p className="text-clay text-sm">{err}</p>}
       {items.map((it, i) => (
-        <div key={it.id} onClick={() => setCursor(i)}
-          className={`card p-4 grid sm:grid-cols-[64px_1fr_auto] gap-4 items-center ${i === cursor ? "ring-2 ring-indigo" : ""}`}>
+        <div key={it.id} onFocusCapture={() => setCursor(i)}
+          className={`card p-4 grid sm:grid-cols-[64px_1fr_auto] gap-4 items-center ${i === cursor ? "ring-2 ring-brand" : ""}`}>
           <div className="size-16 rounded-lg bg-line/60 overflow-hidden grid place-items-center text-xs text-muted">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             {it.image ? <img src={it.image} alt="" className="size-full object-cover" /> : LABEL[it.type]}
@@ -67,7 +67,7 @@ export function ReviewQueue({ items: initial }: { items: QueueItem[] }) {
           <div className="flex sm:flex-col gap-2">
             <button onClick={() => decide(it, "approved")} className="btn bg-leaf text-surface justify-center">Approve</button>
             <button onClick={() => decide(it, "rejected")} className="btn btn-ghost justify-center">Reject</button>
-            {it.href && <a href={it.href} target="_blank" className="text-xs text-indigo text-center">open</a>}
+            {it.href && <a href={it.href} target="_blank" className="text-xs text-brand text-center">open</a>}
           </div>
         </div>
       ))}

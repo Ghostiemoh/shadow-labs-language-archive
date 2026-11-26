@@ -52,12 +52,12 @@ export default async function Me() {
           <ul className="mt-3 grid gap-2">
             {(tasks ?? []).map((t) => (
               <li key={t.id} className="card p-3 flex items-center justify-between gap-3">
-                <Link href={`/tasks/${t.id}`} className="hover:text-indigo">{t.source_text}</Link>
+                <Link href={`/tasks/${t.id}`} className="hover:text-brand">{t.source_text}</Link>
                 <span className="text-xs uppercase font-semibold text-muted">{t.target_language} · {t.status}</span>
               </li>
             ))}
           </ul>
-        ) : <p className="mt-2 text-muted text-sm">None yet. <Link className="text-indigo" href="/tasks">Pick one →</Link></p>}
+        ) : <p className="mt-2 text-muted text-sm">None yet. <Link className="text-brand" href="/tasks">Pick one →</Link></p>}
       </section>
 
       {(payouts ?? []).length > 0 && (
@@ -75,5 +75,5 @@ export default async function Me() {
 }
 
 function Box({ n, label }: { n: number | string; label: string }) {
-  return <div className="card p-4"><div className="display text-[length:var(--step-3)] text-indigo">{n}</div><div className="text-sm text-muted">{label}</div></div>;
+  return <div className="card p-4"><div className="display text-[length:var(--step-3)] text-brand">{n}</div><div className="text-sm text-muted">{label}</div></div>;
 }

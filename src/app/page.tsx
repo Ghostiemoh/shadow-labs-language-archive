@@ -17,29 +17,55 @@ export default async function Home() {
 
   return (
     <>
-      {/* Specimen hero: the word is the hero, set large, with the picture as its plate. */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 pt-8 sm:pt-14 pb-14 sm:pb-20 grid lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-16 items-start">
-        <div className="order-2 lg:order-1 lg:pt-6">
-          <p className="eyebrow rise">A picture dictionary · Hausa, Yoruba, Igbo</p>
-          <h1 className="display rise rise-1 mt-4 text-[length:var(--step-5)] text-ink">
-            Our languages, written and spoken by the people who own them.
+      {/* Field hero, after the AI Philosophy reference: clay-red field, cream type, a halftone heritage image.
+          Ìjàpá, the tortoise of our folktales, stands where the reference puts a classical bust. */}
+      <section className="relative overflow-hidden bg-brand text-cream" aria-labelledby="hero-title">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-10 sm:pt-14 pb-8 lg:min-h-[640px] lg:pb-14">
+          <h1 id="hero-title" className="display rise rise-1 relative text-[length:var(--step-5)] text-cream max-w-[9ch] lg:absolute lg:top-14 lg:left-6">
+            Words that last.
           </h1>
-          <p className="rise rise-2 mt-6 text-[1.08rem] leading-relaxed text-ink-soft prose-measure">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/brand/ijapa-halftone.webp" alt="Halftone portrait of a tortoise, ìjàpá, the trickster of Nigerian folktales"
+            fetchPriority="high" width={1400} height={928}
+            className="rise w-full h-auto my-4 lg:my-0 lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-[72%]" />
+          <p className="display rise rise-3 relative text-right text-[length:var(--step-5)] text-cream lg:absolute lg:bottom-12 lg:right-6 mt-4 lg:mt-0">
+            Voices that endure.
+          </p>
+          <ul className="halftone-markers rise rise-2 relative mt-6 lg:mt-0 grid gap-3 text-[0.8rem] uppercase tracking-[0.08em] text-cream/90 lg:absolute lg:top-[42%] lg:left-6">
+            <li><b className="font-semibold text-cream tabular-nums">{stats.langs.reduce((a, l) => a + Number(l.approved_names) + Number(l.pending_names), 0)}</b> names drafted</li>
+            <li><b className="font-semibold text-cream tabular-nums">{stats.langs.length}</b> languages live</li>
+            <li><b className="font-semibold text-cream tabular-nums">{stats.langs.reduce((a, l) => a + Number(l.approved_audio), 0)}</b> voices recorded</li>
+          </ul>
+          <p className="rise rise-4 relative mt-8 lg:mt-0 max-w-[30ch] text-[0.95rem] leading-snug text-cream/90 lg:absolute lg:bottom-14 lg:left-6">
+            A picture dictionary of Hausa, Yoruba and Igbo. Where native speakers meet machine precision.
+          </p>
+        </div>
+        <p className="mx-auto max-w-6xl px-4 sm:px-6 pb-3 text-[0.7rem] text-cream/60">Ìjàpá · photo: Marius Burger, CC0, via iNaturalist</p>
+      </section>
+
+      {/* Look-up: search first, with one word shown as a specimen. */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 pt-12 sm:pt-16 pb-14 sm:pb-20 grid lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-16 items-start">
+        <div className="lg:pt-2">
+          <p className="eyebrow">Look up a word</p>
+          <h2 className="display mt-3 text-[length:var(--step-4)] text-ink">
+            Our languages, written and spoken by the people who own them.
+          </h2>
+          <p className="mt-5 text-[1.08rem] leading-relaxed text-ink-soft prose-measure">
             Every word has a picture, its name in each language with full tone marks, and a native speaker&apos;s voice.
             Go from Hausa to Igbo without passing through English.
           </p>
-          <div className="rise rise-3 mt-8 max-w-lg"><SearchBox /></div>
-          <p className="rise rise-4 mt-3 text-[0.9rem] text-muted">
+          <div className="mt-8 max-w-lg"><SearchBox /></div>
+          <p className="mt-3 text-[0.9rem] text-muted">
             Tone marks optional: <Link href="/search?q=ewure" className="link word">ewure</Link> finds <span className="word">ewúrẹ́</span>.
           </p>
         </div>
 
         {goat && (
-          <Link href="/concept/goat" className="order-1 lg:order-2 group block rise">
+          <Link href="/concept/goat" className="group block">
             <figure>
               <div className="aspect-[4/3] overflow-hidden rounded-[4px] bg-sand">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                {goatImg && <img src={goatImg.url} alt="A goat" fetchPriority="high" className="size-full object-cover" />}
+                {goatImg && <img src={goatImg.url} alt="A goat" loading="lazy" className="size-full object-cover" />}
               </div>
               <figcaption className="mt-4 flex items-baseline justify-between gap-4">
                 <span className="eyebrow">No. 001 · Goat</span>
@@ -52,7 +78,7 @@ export default async function Home() {
                 return (
                   <div key={l.code} className="flex items-baseline gap-4 py-2.5">
                     <dt className="eyebrow w-16 shrink-0">{l.name}</dt>
-                    <dd className="word text-[length:var(--step-3)] font-bold text-ink group-hover:text-indigo transition-colors">{n?.form ?? "…"}</dd>
+                    <dd className="word text-[length:var(--step-3)] font-bold text-ink group-hover:text-brand transition-colors">{n?.form ?? "…"}</dd>
                     {n && <dd className="ml-auto hidden sm:block"><StatusBadge status={n.status} source={n.source} /></dd>}
                   </div>
                 );
@@ -115,7 +141,7 @@ export default async function Home() {
                 <Link href={`/browse/${c.slug}`} className="group grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3.5rem_1fr_auto] gap-x-4 gap-y-3 items-center py-5">
                   <span className="display text-muted text-[length:var(--step-1)] tabular-nums">{String(i + 1).padStart(2, "0")}</span>
                   <span>
-                    <span className="display text-[length:var(--step-2)] group-hover:text-indigo transition-colors">{c.name}</span>
+                    <span className="display text-[length:var(--step-2)] group-hover:text-brand transition-colors">{c.name}</span>
                     <span className="block text-[0.92rem] text-ink-soft">{c.description} · {items.length} entries</span>
                   </span>
                   <span className="col-start-2 sm:col-start-3 flex gap-1.5">
@@ -140,18 +166,18 @@ export default async function Home() {
       </section>
 
       {/* Fix the AI: show a real task instead of describing it. */}
-      <section className="bg-indigo text-indigo-soft">
+      <section className="bg-ink text-cream">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24 grid lg:grid-cols-[1fr_1.1fr] gap-12 items-center">
           <div>
             <p className="eyebrow !text-ochre">Fix the AI · paid per accepted task</p>
             <h2 className="display mt-3 text-[length:var(--step-4)] text-surface">AI gets our languages wrong. Native speakers set it right.</h2>
-            <p className="mt-5 leading-[1.7] prose-measure text-indigo-soft/90">
+            <p className="mt-5 leading-[1.7] prose-measure text-cream/85">
               An AI drafts a sentence. You correct it, read it aloud in your own voice and mark what it got wrong.
               A reviewer for your language checks it. Accepted work is paid, credited to you, and becomes data that teaches machines to do better.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/tasks" className="btn bg-surface text-indigo hover:bg-sand">Try a task</Link>
-              <Link href="/contribute" className="btn border border-indigo-soft/40 text-surface hover:border-surface">How it works</Link>
+              <Link href="/tasks" className="btn bg-cream text-ink hover:bg-surface">Try a task</Link>
+              <Link href="/contribute" className="btn border border-cream/40 text-cream hover:border-cream">How it works</Link>
             </div>
           </div>
 

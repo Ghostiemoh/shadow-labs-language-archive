@@ -32,7 +32,7 @@ export function People({ people, languages }: { people: Profile[]; languages: La
                 const on = p.languages.includes(l.code);
                 return (
                   <button key={l.code} onClick={() => update(p.id, { languages: on ? p.languages.filter((x) => x !== l.code) : [...p.languages, l.code] })}
-                    className={`text-xs rounded-full px-2 py-0.5 border ${on ? "bg-indigo text-surface border-indigo" : "border-line"}`}>{l.code}</button>
+                    className={`text-xs rounded-full px-2 py-0.5 border ${on ? "bg-brand text-surface border-brand" : "border-line"}`}>{l.code}</button>
                 );
               })}
             </div>
@@ -106,7 +106,7 @@ export function PhotoPicker({ concepts }: { concepts: { id: string; slug: string
       {hits && (
         <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
           {hits.map((h) => (
-            <button key={h.page} onClick={() => pick(h)} className="card overflow-hidden text-left hover:ring-2 hover:ring-indigo">
+            <button key={h.page} onClick={() => pick(h)} className="card overflow-hidden text-left hover:ring-2 hover:ring-brand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={h.thumb} alt={h.title} className="aspect-[4/3] w-full object-cover" />
               <div className="p-2 text-[11px] text-muted truncate">{h.license} · {h.artist}</div>

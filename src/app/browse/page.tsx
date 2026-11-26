@@ -17,7 +17,7 @@ export default async function Browse() {
           <section key={col.slug} className="mt-10">
             <div className="flex items-end justify-between">
               <h2 className="display text-[length:var(--step-2)]">{col.name} <span className="text-muted text-base font-normal">· {items.length}</span></h2>
-              <Link href={`/browse/${col.slug}`} className="text-indigo text-sm font-semibold">See all →</Link>
+              <Link href={`/browse/${col.slug}`} className="text-brand text-sm font-semibold">See all →</Link>
             </div>
             <div className="mt-4 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
               {items.slice(0, 10).map((c) => <ConceptCard key={c.id} concept={c} languages={languages} />)}
