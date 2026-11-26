@@ -29,24 +29,26 @@ Images and audio go in R2, not Supabase Storage. R2 gives 10 GB free instead of 
 
 ## Week 2: the base app (Claude)
 
-- [ ] Create the Next.js app and connect it to Supabase.
-- [ ] Database tables: languages, concepts, names per language, sentences, audio, images (with license, source and credit), contributors, reviews, payouts.
+Built 26 Nov 2026 in `web/`. Images and audio use Supabase Storage for now; R2 comes when storage nears the 1 GB free limit. Photos: 29 animals from iNaturalist; the Admin page searches Wikimedia Commons for the rest. See `web/README.md`.
+
+- [x] Create the Next.js app and connect it to Supabase.
+- [x] Database tables: languages, concepts, names per language, sentences, audio, images (with license, source and credit), contributors, reviews, payouts.
 - [ ] Connect Cloudflare R2 for images and audio.
 - [ ] Image script: takes your word list, finds open-licensed photos on Wikimedia Commons, saves each with its license and credit. You pick the best one for each word.
 - [ ] Deploy to Vercel so you can open it on your phone.
 
 ## Week 3: the first real pages (Claude)
 
-- [ ] Concept page: photo, names in Hausa, Yoruba and Igbo, audio, sentences, photo credit.
-- [ ] Browse by collection (animals, food, clothing and crafts, household items).
-- [ ] Search in English, Hausa, Yoruba and Igbo.
-- [ ] Sign-in for you and the leads.
-- [ ] Review queue: nothing shows on the public site until a reviewer for that language approves it.
+- [x] Concept page: photo, names in Hausa, Yoruba and Igbo, audio, sentences, photo credit.
+- [x] Browse by collection (animals, food, clothing and crafts, household items).
+- [x] Search in English, Hausa, Yoruba and Igbo.
+- [x] Sign-in for you and the leads.
+- [x] Review queue: nothing shows on the public site until a reviewer for that language approves it.
 
 ## Week 4: Fix-the-AI (Claude, then you test)
 
 - [ ] AI draft script: sends a batch of sentences to Google Cloud Translation once and saves the drafts. Runs only when started by hand.
-- [ ] Task page: shows the draft, the contributor fixes the text, records their voice in the browser, and ticks what the AI got wrong (tones, wrong word, wrong meaning, spelling).
+- [x] Task page: shows the draft, the contributor fixes the text, records their voice in the browser, and ticks what the AI got wrong (tones, wrong word, wrong meaning, spelling).
 - [ ] You do 20 Hausa tasks and say what's awkward. Claude fixes it.
 - [ ] Weekly backup: a script exports the database and copies it, with the files list, to Google Drive.
 
