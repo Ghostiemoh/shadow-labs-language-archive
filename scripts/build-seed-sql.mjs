@@ -26,10 +26,10 @@ join public.concepts c on c.slug = v.slug
 where not exists (select 1 from public.lexemes x where x.concept_id = c.id and x.language = v.lang and x.form = v.form);\n\n`;
 
 const imgs = Object.entries(images).map(([slug, i]) =>
-  `(${q(slug)}, ${q(i.url)}, ${q(i.license)}, ${q(i.license_url)}, ${q(i.source_url)}, ${q(i.creator)}, ${q(i.credit)})`);
-sql += `insert into public.media (kind, concept_id, url, license, license_url, source_url, creator, credit, is_primary, status)
-select 'image', c.id, v.url, v.license, v.license_url, v.source_url, v.creator, v.credit, true, 'approved'
-from (values\n  ${imgs.join(",\n  ")}\n) as v(slug, url, license, license_url, source_url, creator, credit)
+  `(${q(slug)}, ${q(i.url)}, ${q(i.license)}, ${q(i.license_url)}, ${q(i.source_url)}, ${q(i.creator)}, ${q(i.credit)}, ${i.ai_generated ? "true" : "false"})`);
+sql += `insert into public.media (kind, concept_id, url, license, license_url, source_url, creator, credit, ai_generated, is_primary, status)
+select 'image', c.id, v.url, v.license, v.license_url, v.source_url, v.creator, v.credit, v.ai, true, 'approved'
+from (values\n  ${imgs.join(",\n  ")}\n) as v(slug, url, license, license_url, source_url, creator, credit, ai)
 join public.concepts c on c.slug = v.slug
 where not exists (select 1 from public.media m where m.concept_id = c.id and m.url = v.url);\n\n`;
 

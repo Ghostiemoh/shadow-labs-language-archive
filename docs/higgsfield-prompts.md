@@ -11,7 +11,7 @@ Each line is `slug: prompt`. Every image is saved in the archive as **AI-generat
 Style suffix used on every prompt: *documentary photograph, natural daylight, plain uncluttered background, the object centred and fully visible, no text, no logos, no people's faces.*
 
 
-## food (26)
+## food (26) — done 26 Nov 2026, live with "AI image" label
 
 ```text
 rice: rice, as found in Nigeria, on a woven mat or enamel plate at a northern Nigerian market stall. Documentary photograph, natural daylight, plain uncluttered background, object centred and fully visible, no text, no logos, no faces.

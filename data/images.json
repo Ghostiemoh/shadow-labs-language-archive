@@ -230,5 +230,239 @@
     "source_url": "https://www.inaturalist.org/photos/277644122",
     "creator": "Andrew Murray",
     "credit": "Photo: Andrew Murray, CC BY 4.0, via iNaturalist"
+  },
+  "banana": {
+    "url": "/images/food/banana.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "beans": {
+    "url": "/images/food/beans.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "bread": {
+    "url": "/images/food/bread.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "cassava": {
+    "url": "/images/food/cassava.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "egg": {
+    "url": "/images/food/egg.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "groundnut": {
+    "url": "/images/food/groundnut.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "honey": {
+    "url": "/images/food/honey.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "kola-nut": {
+    "url": "/images/food/kola-nut.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "maize": {
+    "url": "/images/food/maize.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "mango": {
+    "url": "/images/food/mango.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "meat": {
+    "url": "/images/food/meat.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "milk": {
+    "url": "/images/food/milk.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "millet": {
+    "url": "/images/food/millet.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "okra": {
+    "url": "/images/food/okra.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "onion": {
+    "url": "/images/food/onion.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "orange": {
+    "url": "/images/food/orange.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "palm-oil": {
+    "url": "/images/food/palm-oil.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "pepper": {
+    "url": "/images/food/pepper.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "pounded-yam": {
+    "url": "/images/food/pounded-yam.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "rice": {
+    "url": "/images/food/rice.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "salt": {
+    "url": "/images/food/salt.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "sorghum": {
+    "url": "/images/food/sorghum.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "tomato": {
+    "url": "/images/food/tomato.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "tuwo": {
+    "url": "/images/food/tuwo.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "water": {
+    "url": "/images/food/water.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
+  },
+  "yam": {
+    "url": "/images/food/yam.webp",
+    "license": "AI-generated image, owned by Shadow Labs",
+    "license_url": null,
+    "source_url": null,
+    "creator": "Higgsfield (AI)",
+    "credit": "AI-generated image (Higgsfield), 26 Nov 2026. To be replaced by a real photo.",
+    "ai_generated": true
   }
 }

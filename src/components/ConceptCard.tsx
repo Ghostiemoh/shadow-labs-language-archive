@@ -10,7 +10,11 @@ export function ConceptCard({ concept, languages }: { concept: Concept; language
         {img ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={img.url} alt={concept.english} loading="lazy" className="size-full object-cover group-hover:scale-[1.03] transition duration-500" />
-        ) : (
+        ) : null}
+        {img?.ai_generated && (
+          <span className="absolute top-2 left-2 rounded-full bg-ink/70 text-white text-[10px] font-semibold px-2 py-0.5">AI image</span>
+        )}
+        {!img && (
           <div className="size-full grid place-items-center text-muted text-sm">
             <span className="font-serif text-4xl text-ink/20">{concept.english.slice(0, 1).toUpperCase()}</span>
           </div>

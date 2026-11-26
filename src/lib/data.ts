@@ -74,7 +74,7 @@ export async function getStats() {
   const [{ data: langs }, { count: concepts }, { count: photos }] = await Promise.all([
     supabase.from("language_stats").select("*").eq("active", true).order("sort"),
     supabase.from("concepts").select("*", { count: "exact", head: true }),
-    supabase.from("media").select("*", { count: "exact", head: true }).eq("kind", "image").eq("status", "approved"),
+    supabase.from("media").select("*", { count: "exact", head: true }).eq("kind", "image").eq("status", "approved").eq("ai_generated", false),
   ]);
   return { langs: langs ?? [], concepts: concepts ?? 0, photos: photos ?? 0 };
 }
