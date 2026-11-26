@@ -1,78 +1,96 @@
-import type { Metadata } from "next";
-import { Noto_Sans, Noto_Serif } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Charis_SIL, Familjen_Grotesk } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { SITE_NAME, SHOW_DRAFTS } from "@/lib/site";
 import { getViewer } from "@/lib/data";
 import { SearchBox } from "@/components/SearchBox";
 
-const sans = Noto_Sans({ subsets: ["latin", "latin-ext"], variable: "--font-noto-sans", display: "swap" });
-const serif = Noto_Serif({ subsets: ["latin", "latin-ext"], variable: "--font-noto-serif", weight: ["400", "600", "700"], display: "swap" });
+// Charis SIL: made by SIL for languages with stacked tone marks and hooked letters.
+// The vietnamese subset carries the dot-below vowels (ẹ ọ ụ ị); latin-ext carries ɓ ɗ ƙ.
+const charis = Charis_SIL({ subsets: ["latin", "latin-ext", "vietnamese"], weight: ["400", "700"], variable: "--font-charis", display: "swap" });
+const familjen = Familjen_Grotesk({ subsets: ["latin", "latin-ext", "vietnamese"], variable: "--font-familjen", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: `${SITE_NAME}: Nigerian languages, word by word`, template: `%s · ${SITE_NAME}` },
   description:
-    "A picture dictionary for Hausa, Yoruba and Igbo, built by native speakers. Every word has a photo, the name in each language, tone marks and the speaker's own voice.",
+    "A picture dictionary of Hausa, Yoruba and Igbo, written and voiced by native speakers. Every word has a picture, its name in each language, tone marks and a real voice.",
 };
+
+export const viewport: Viewport = { themeColor: "#f7f2e8" };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { profile } = await getViewer();
+  const nav = [
+    { href: "/browse", label: "Browse" },
+    { href: "/tasks", label: "Fix the AI" },
+    { href: "/contribute", label: "Contribute" },
+    { href: "/about", label: "About" },
+    ...(profile && (profile.role === "reviewer" || profile.role === "admin") ? [{ href: "/review", label: "Review" }] : []),
+    ...(profile?.role === "admin" ? [{ href: "/admin", label: "Admin" }] : []),
+  ];
   return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={`${charis.variable} ${familjen.variable}`}>
       <body className="min-h-screen flex flex-col">
-        {SHOW_DRAFTS && (
-          <div className="bg-ochre/15 text-[13px] text-ink/80 text-center px-4 py-1.5 border-b border-line">
-            Preview: names marked <span className="font-semibold">draft</span> are AI drafts waiting for a native-speaker reviewer.
-          </div>
-        )}
-        <header className="bg-paper border-b border-line">
-          <div className="mx-auto max-w-6xl px-4 py-3 flex flex-wrap items-center gap-x-6 gap-y-3">
-            <Link href="/" className="flex items-center gap-2 shrink-0">
-              <span aria-hidden className="grid place-items-center size-9 rounded-full bg-indigo text-white font-serif font-bold text-lg">ẹ</span>
-              <span className="font-serif font-bold text-lg tracking-tight">{SITE_NAME}</span>
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:p-3 focus:bg-surface">Skip to content</a>
+        <header className="border-b border-line bg-paper/95 backdrop-blur-[2px] sticky top-0 z-20">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 h-16 flex items-center gap-6">
+            <Link href="/" className="flex items-baseline gap-2 shrink-0" aria-label={`${SITE_NAME} home`}>
+              <span className="display text-[1.45rem] tracking-tight">{SITE_NAME}</span>
+              <span aria-hidden className="word text-clay text-lg leading-none">ẹ̀</span>
             </Link>
-            <nav className="flex items-center gap-4 text-[15px] text-ink/80 order-3 sm:order-none w-full sm:w-auto overflow-x-auto">
-              <Link href="/browse" className="hover:text-indigo">Browse</Link>
-              <Link href="/tasks" className="hover:text-indigo">Fix the AI</Link>
-              <Link href="/contribute" className="hover:text-indigo">Contribute</Link>
-              <Link href="/about" className="hover:text-indigo">About</Link>
-              {profile && (profile.role === "reviewer" || profile.role === "admin") && (
-                <Link href="/review" className="hover:text-indigo">Review</Link>
-              )}
-              {profile?.role === "admin" && <Link href="/admin" className="hover:text-indigo">Admin</Link>}
+            <nav aria-label="Main" className="hidden md:flex items-center gap-5 text-[0.95rem] text-ink-soft">
+              {nav.map((n) => <Link key={n.href} href={n.href} className="hover:text-indigo py-2">{n.label}</Link>)}
             </nav>
             <div className="ml-auto flex items-center gap-3">
-              <div className="hidden md:block w-64"><SearchBox compact /></div>
+              <div className="hidden lg:block w-60"><SearchBox compact /></div>
               {profile ? (
-                <Link href="/me" className="btn btn-ghost !py-1.5 text-sm">{profile.display_name || "Me"}</Link>
+                <Link href="/me" className="btn btn-ghost !min-h-10 text-sm">{profile.display_name || "Me"}</Link>
               ) : (
-                <Link href="/login" className="btn btn-primary !py-1.5 text-sm">Sign in</Link>
+                <Link href="/login" className="btn btn-primary !min-h-10 text-sm">Sign in</Link>
               )}
             </div>
           </div>
+          {/* Phones: the same links, scrollable, never hidden behind a menu. */}
+          <nav aria-label="Main" className="md:hidden border-t border-line overflow-x-auto">
+            <div className="flex gap-1 px-3 text-[0.95rem] text-ink-soft whitespace-nowrap">
+              {nav.map((n) => <Link key={n.href} href={n.href} className="px-2.5 py-2.5 hover:text-indigo">{n.label}</Link>)}
+              <Link href="/search" className="px-2.5 py-2.5 hover:text-indigo">Search</Link>
+            </div>
+          </nav>
         </header>
-        <main className="flex-1">{children}</main>
-        <div className="weave" />
-        <footer className="bg-ink text-sand/80 text-sm">
-          <div className="mx-auto max-w-6xl px-4 py-10 grid gap-8 sm:grid-cols-3">
-            <div>
-              <div className="font-serif text-sand text-lg font-bold">{SITE_NAME}</div>
-              <p className="mt-2 leading-relaxed">Hausa, Yoruba and Igbo first. Fulfulde, Kanuri, Tiv, Ijaw, Efik and more next, each with its own native-speaker lead.</p>
+
+        {SHOW_DRAFTS && (
+          <p className="bg-ochre-soft text-[0.85rem] text-ink-soft px-4 py-2 text-center">
+            Preview. Names marked <b className="text-ink">AI draft</b> have not yet been checked by a native speaker.
+          </p>
+        )}
+
+        <main id="main" className="flex-1">{children}</main>
+
+        <div className="weave" aria-hidden />
+        <footer className="bg-indigo-deep text-indigo-soft">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 grid gap-10 sm:grid-cols-[1.4fr_1fr_1fr]">
+            <div className="max-w-sm">
+              <div className="display text-2xl text-surface">{SITE_NAME}</div>
+              <p className="mt-3 leading-relaxed text-indigo-soft/80">
+                Hausa, Yoruba and Igbo first. Fulfulde, Kanuri, Tiv, Ijaw and Efik next, each with its own native-speaker lead.
+              </p>
             </div>
-            <div className="space-y-1.5">
-              <div className="text-sand font-semibold">Use it</div>
-              <Link href="/browse" className="block hover:text-white">Browse collections</Link>
-              <Link href="/search" className="block hover:text-white">Search</Link>
-              <Link href="/about#licenses" className="block hover:text-white">Licenses and credits</Link>
+            <div className="grid gap-2 content-start">
+              <div className="eyebrow !text-indigo-soft/60">Use it</div>
+              <Link href="/browse" className="hover:text-surface">Browse collections</Link>
+              <Link href="/search" className="hover:text-surface">Search</Link>
+              <Link href="/about#licenses" className="hover:text-surface">Licences and credits</Link>
             </div>
-            <div className="space-y-1.5">
-              <div className="text-sand font-semibold">Build it</div>
-              <Link href="/contribute" className="block hover:text-white">Become a contributor</Link>
-              <Link href="/tasks" className="block hover:text-white">Fix-the-AI tasks</Link>
-              <Link href="/about#data" className="block hover:text-white">Data for researchers and companies</Link>
+            <div className="grid gap-2 content-start">
+              <div className="eyebrow !text-indigo-soft/60">Build it</div>
+              <Link href="/contribute" className="hover:text-surface">Become a contributor</Link>
+              <Link href="/tasks" className="hover:text-surface">Fix-the-AI tasks</Link>
+              <Link href="/about#data" className="hover:text-surface">Data for research and industry</Link>
             </div>
           </div>
-          <div className="border-t border-white/10 text-center py-4 text-xs text-sand/50">A Shadow Labs project · Abuja</div>
+          <div className="border-t border-surface/10 text-center py-4 text-xs text-indigo-soft/60">A Shadow Labs project · Abuja</div>
         </footer>
       </body>
     </html>

@@ -34,7 +34,7 @@ export default function Login() {
 
   return (
     <div className="mx-auto max-w-md px-4 py-14">
-      <h1 className="font-serif text-3xl font-bold">{mode === "in" ? "Sign in" : "Join as a contributor"}</h1>
+      <h1 className="display text-[length:var(--step-3)]">{mode === "in" ? "Sign in" : "Join as a contributor"}</h1>
       <p className="mt-2 text-muted">{mode === "in" ? "Welcome back." : "Add names, record your voice and fix AI translations in your language."}</p>
       <form onSubmit={submit} className="mt-6 card p-5 grid gap-4">
         {mode === "up" && (

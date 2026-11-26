@@ -79,7 +79,7 @@ export function TaskEditor({ task, languageName, userId, agreementSigned, nextId
         <div className="flex flex-wrap gap-2">
           {ERROR_TAGS.map((t) => (
             <button type="button" key={t.id} title={t.hint} onClick={() => toggle(t.id)}
-              className={`btn !py-1.5 text-sm ${tags.includes(t.id) ? (t.id === "ok" ? "bg-leaf text-white" : "btn-clay") : "btn-ghost"}`}>
+              className={`btn !py-1.5 text-sm ${tags.includes(t.id) ? (t.id === "ok" ? "bg-leaf text-surface" : "btn-clay") : "btn-ghost"}`}>
               {t.label}
             </button>
           ))}

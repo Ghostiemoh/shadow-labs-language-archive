@@ -12,7 +12,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Promi
       <div className="max-w-2xl"><SearchBox defaultValue={q} /></div>
       <p className="mt-3 text-sm text-muted">Tone marks are optional: <span className="word">ewure</span> finds <span className="word">ewúrẹ́</span>.</p>
       {q && (
-        <h1 className="mt-8 font-serif text-2xl font-bold">
+        <h1 className="mt-8 display text-[length:var(--step-2)]">
           {results.length ? `${results.length} result${results.length > 1 ? "s" : ""} for “${q}”` : `Nothing found for “${q}” yet`}
         </h1>
       )}

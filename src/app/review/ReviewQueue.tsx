@@ -65,7 +65,7 @@ export function ReviewQueue({ items: initial }: { items: QueueItem[] }) {
               value={notes[it.id] ?? ""} onChange={(e) => setNotes({ ...notes, [it.id]: e.target.value })} />
           </div>
           <div className="flex sm:flex-col gap-2">
-            <button onClick={() => decide(it, "approved")} className="btn bg-leaf text-white justify-center">Approve</button>
+            <button onClick={() => decide(it, "approved")} className="btn bg-leaf text-surface justify-center">Approve</button>
             <button onClick={() => decide(it, "rejected")} className="btn btn-ghost justify-center">Reject</button>
             {it.href && <a href={it.href} target="_blank" className="text-xs text-indigo text-center">open</a>}
           </div>

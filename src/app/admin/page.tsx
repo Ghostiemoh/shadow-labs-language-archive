@@ -20,7 +20,7 @@ export default async function Admin() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 grid gap-10">
       <div>
-        <h1 className="font-serif text-3xl font-bold">Admin</h1>
+        <h1 className="display text-[length:var(--step-3)]">Admin</h1>
         <p className="text-muted mt-1">{concepts?.length} concepts · {noPhoto.length} without a photo · {people?.length} people</p>
         <div className="mt-3 flex flex-wrap gap-2">
           <a className="btn btn-ghost text-sm" href="/export?type=names">Download reviewed names (CSV)</a>

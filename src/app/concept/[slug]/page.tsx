@@ -33,99 +33,102 @@ export default async function ConceptPage({ params }: { params: Promise<{ slug: 
   const others = related.filter((c) => c.id !== concept.id).slice(0, 4);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
-      <Link href={`/browse/${concept.collection_slug}`} className="text-sm text-indigo capitalize">← {concept.collection_slug?.replace("-", " and ")}</Link>
+    <article className="mx-auto max-w-6xl px-4 sm:px-6 pt-6 pb-20">
+      <Link href={`/browse/${concept.collection_slug}`} className="link text-[0.9rem] capitalize">← {concept.collection_slug?.replace("-", " and ")}</Link>
 
-      <div className="mt-4 grid lg:grid-cols-[1.1fr_1fr] gap-8 items-start">
-        <figure className="card overflow-hidden">
-          <div className="aspect-[4/3] bg-line/60">
-            {img ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={img.url} alt={concept.english} className="size-full object-cover" />
-            ) : (
-              <div className="size-full grid place-items-center text-center p-8 text-muted">
-                <div>
-                  <div className="font-serif text-6xl text-ink/15">{concept.english}</div>
-                  <p className="mt-3 text-sm">No photo yet. Market photos of the real thing are best.</p>
-                </div>
-              </div>
-            )}
-          </div>
-          {img && (
-            <figcaption className="px-4 py-2.5 text-xs text-muted border-t border-line">
-              {img.credit}
-              {img.source_url && <> · <a href={img.source_url} className="underline" target="_blank" rel="noreferrer">source</a></>}
-              {img.license_url && <> · <a href={img.license_url} className="underline" target="_blank" rel="noreferrer">license</a></>}
-              {img.ai_generated && <> · AI-generated illustration</>}
-            </figcaption>
-          )}
-        </figure>
+      <div className="mt-5 grid lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-14 items-start">
+        <div className="lg:order-2">
+          <p className="eyebrow">Concept</p>
+          <h1 className="display mt-1 text-[length:var(--step-4)] first-letter:uppercase">{concept.english}</h1>
+          {concept.gloss && <p className="mt-1 text-ink-soft">{concept.gloss}</p>}
 
-        <div>
-          <p className="label">Concept</p>
-          <h1 className="font-serif text-4xl font-bold capitalize">{concept.english}</h1>
-          {concept.gloss && <p className="mt-1 text-muted">{concept.gloss}</p>}
-
-          <div className="mt-6 grid gap-3">
+          <div className="mt-6 border-t border-ink/80">
             {languages.map((l) => {
               const names = (concept.lexemes ?? []).filter((x) => x.language === l.code);
               return (
-                <div key={l.code} className="card p-4">
-                  <div className="flex items-center gap-2">
-                    <LangChip code={l.code} />
-                    <span className="font-semibold">{l.name}</span>
-                    <span className="text-muted text-sm word">· {l.native_name}</span>
+                <section key={l.code} aria-label={l.name} className="border-b border-line py-5">
+                  <div className="flex items-baseline gap-2">
+                    <span className="eyebrow !text-ink">{l.name}</span>
+                    <span className="word text-[0.9rem] text-muted">{l.native_name}</span>
                   </div>
                   {names.length ? (
-                    <ul className="mt-3 grid gap-2">
+                    <ul className="mt-2 grid gap-3">
                       {names.map((n) => {
                         const voice = audio.find((a) => a.lexeme_id === n.id);
                         return (
-                          <li key={n.id} className="flex items-center gap-3 flex-wrap">
-                            {voice ? <AudioButton src={voice.url} label={`Hear ${n.form}`} /> : <span className="size-9 grid place-items-center rounded-full border border-dashed border-line text-muted text-xs" title="No recording yet">🎙</span>}
-                            <span className="word text-3xl font-semibold">{n.form}</span>
-                            <StatusBadge status={n.status} source={n.source} />
-                            {n.dialect && <span className="text-xs text-muted">{n.dialect}</span>}
-                            {voice?.creator && <span className="text-xs text-muted">voice: {voice.creator}</span>}
+                          <li key={n.id} className="flex items-center gap-x-4 gap-y-1 flex-wrap">
+                            {voice ? <AudioButton src={voice.url} label={`Hear ${n.form}`} /> : (
+                              <span className="size-11 shrink-0 grid place-items-center rounded-full border border-dashed border-line-strong text-muted text-[0.65rem] text-center leading-tight" title="No recording yet">no<br />voice</span>
+                            )}
+                            <span className="word text-[length:var(--step-4)] font-bold leading-none">{n.form}</span>
+                            <span className="flex items-center gap-3">
+                              <StatusBadge status={n.status} source={n.source} />
+                              {n.dialect && <span className="text-[0.8rem] text-muted">{n.dialect}</span>}
+                              {voice?.creator && <span className="text-[0.8rem] text-muted">voice: {voice.creator}</span>}
+                            </span>
                           </li>
                         );
                       })}
                     </ul>
                   ) : (
-                    <p className="mt-2 text-sm text-muted">No {l.name} name yet.</p>
+                    <p className="mt-2 text-ink-soft">No {l.name} name yet. Do you know it?</p>
                   )}
                   <AddName conceptId={concept.id} language={l.code} languageName={l.name} signedIn={!!viewer.userId}
                     lexemes={names.map((n) => ({ id: n.id, form: n.form }))} />
-                </div>
+                </section>
               );
             })}
           </div>
 
           {sentences.length > 0 && (
-            <div className="mt-6">
-              <h2 className="font-serif text-xl font-bold">In a sentence</h2>
-              <ul className="mt-3 grid gap-2">
+            <div className="mt-10">
+              <h2 className="display text-[length:var(--step-2)]">In a sentence</h2>
+              <ul className="mt-3 divide-y divide-line">
                 {sentences.map((s) => (
-                  <li key={s.id} className="card p-3">
-                    <div className="flex items-center gap-2"><LangChip code={s.language} /><span className="word text-lg">{s.text}</span></div>
-                    {s.english && <div className="text-sm text-muted mt-1">{s.english}</div>}
+                  <li key={s.id} className="py-3">
+                    <div className="flex items-baseline gap-2"><LangChip code={s.language} /><span className="word text-[1.2rem]">{s.text}</span></div>
+                    {s.english && <div className="pl-9 text-[0.9rem] text-muted">{s.english}</div>}
                   </li>
                 ))}
               </ul>
             </div>
           )}
-          {concept.cultural_note && <p className="mt-6 card p-4 leading-relaxed">{concept.cultural_note}</p>}
+          {concept.cultural_note && <p className="mt-8 prose-measure leading-relaxed text-ink-soft">{concept.cultural_note}</p>}
         </div>
+
+        <figure className="lg:order-1 lg:sticky lg:top-24">
+          <div className="aspect-[4/3] bg-sand rounded-[4px] overflow-hidden">
+            {img ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={img.url} alt={concept.english} className="size-full object-cover" />
+            ) : (
+              <div className="size-full grid place-items-center text-center p-8">
+                <div>
+                  <div className="display text-5xl text-line-strong capitalize">{concept.english}</div>
+                  <p className="mt-3 text-[0.9rem] text-muted">No picture yet. A market photo of the real thing is best.</p>
+                </div>
+              </div>
+            )}
+          </div>
+          {img && (
+            <figcaption className="mt-2 text-[0.78rem] text-muted">
+              {img.ai_generated && <b className="font-semibold text-ink-soft">AI image. </b>}
+              {img.credit}
+              {img.source_url && <> · <a href={img.source_url} className="link" target="_blank" rel="noreferrer">source</a></>}
+              {img.license_url && <> · <a href={img.license_url} className="link" target="_blank" rel="noreferrer">licence</a></>}
+            </figcaption>
+          )}
+        </figure>
       </div>
 
       {others.length > 0 && (
-        <section className="mt-14">
-          <h2 className="font-serif text-2xl font-bold">More in this collection</h2>
-          <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <section className="mt-20">
+          <h2 className="display text-[length:var(--step-3)]">More in this collection</h2>
+          <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-x-5 gap-y-8">
             {others.map((c) => <ConceptCard key={c.id} concept={c} languages={languages} />)}
           </div>
         </section>
       )}
-    </div>
+    </article>
   );
 }

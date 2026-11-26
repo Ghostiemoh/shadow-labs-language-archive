@@ -10,7 +10,7 @@ export function AudioButton({ src, label = "Play" }: { src: string; label?: stri
         type="button"
         aria-label={label}
         onClick={() => { const a = ref.current; if (!a) return; if (a.paused) { a.currentTime = 0; a.play(); } else a.pause(); }}
-        className={`grid place-items-center size-9 rounded-full border border-line bg-white hover:border-indigo ${playing ? "text-clay" : "text-indigo"}`}
+        className={`grid place-items-center size-11 shrink-0 rounded-full ${playing ? "bg-clay text-surface" : "bg-indigo text-surface hover:bg-indigo-deep"}`}
       >
         {playing ? "■" : "▶"}
       </button>

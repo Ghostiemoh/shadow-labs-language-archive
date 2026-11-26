@@ -1,16 +1,19 @@
 export function SearchBox({ compact = false, defaultValue = "" }: { compact?: boolean; defaultValue?: string }) {
+  const id = compact ? "q-top" : "q-main";
   return (
     <form action="/search" role="search" className="relative">
-      <label htmlFor={compact ? "q-top" : "q-main"} className="sr-only">Search in any language</label>
+      <label htmlFor={id} className="sr-only">Search in Hausa, Yoruba, Igbo or English</label>
       <input
-        id={compact ? "q-top" : "q-main"}
+        id={id}
         name="q"
+        type="search"
         defaultValue={defaultValue}
-        placeholder={compact ? "Search: akuya, ewúrẹ́, ewu…" : "Type a word in Hausa, Yoruba, Igbo or English"}
-        className={`input ${compact ? "!py-1.5 text-sm !rounded-full pl-4" : "!py-3.5 !text-lg !rounded-full pl-5 pr-28 shadow-sm"}`}
+        placeholder={compact ? "Search a word" : "akuya, ewúrẹ́, ewu or goat"}
+        className={`input word ${compact ? "!min-h-10 !py-1.5 text-[0.95rem]" : "!min-h-14 !text-xl pl-4 pr-28"}`}
         autoComplete="off"
+        enterKeyHint="search"
       />
-      {!compact && <button className="btn btn-primary absolute right-1.5 top-1.5">Search</button>}
+      {!compact && <button className="btn btn-primary absolute right-1.5 top-1.5 !min-h-11">Search</button>}
     </form>
   );
 }

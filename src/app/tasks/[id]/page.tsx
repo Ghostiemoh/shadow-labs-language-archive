@@ -29,7 +29,7 @@ export default async function TaskPage({ params }: { params: Promise<{ id: strin
           </div>
           <div className="p-5">
             <p className="label">Translate into {lang?.name}</p>
-            <p className="mt-2 text-2xl font-serif">“{task.source_text}”</p>
+            <p className="mt-2 display text-[length:var(--step-2)]">“{task.source_text}”</p>
             {task.concepts && <Link href={`/concept/${task.concepts.slug}`} className="mt-2 inline-block text-sm text-indigo">Concept: {task.concepts.english}</Link>}
           </div>
         </div>

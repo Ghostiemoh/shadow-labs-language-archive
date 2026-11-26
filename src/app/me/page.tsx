@@ -25,7 +25,7 @@ export default async function Me() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="label">{profile.role}</p>
-          <h1 className="font-serif text-3xl font-bold">{profile.display_name}</h1>
+          <h1 className="display text-[length:var(--step-3)]">{profile.display_name}</h1>
           <p className="text-muted text-sm">{email}</p>
         </div>
         <form action="/auth/signout" method="post"><button className="btn btn-ghost">Sign out</button></form>
@@ -47,7 +47,7 @@ export default async function Me() {
       <ProfileForm profile={profile} languages={languages} />
 
       <section>
-        <h2 className="font-serif text-xl font-bold">My Fix-the-AI tasks</h2>
+        <h2 className="display text-[length:var(--step-1)]">My Fix-the-AI tasks</h2>
         {(tasks ?? []).length ? (
           <ul className="mt-3 grid gap-2">
             {(tasks ?? []).map((t) => (
@@ -62,7 +62,7 @@ export default async function Me() {
 
       {(payouts ?? []).length > 0 && (
         <section>
-          <h2 className="font-serif text-xl font-bold">Payouts</h2>
+          <h2 className="display text-[length:var(--step-1)]">Payouts</h2>
           <ul className="mt-3 grid gap-2">
             {(payouts ?? []).map((p) => (
               <li key={p.id} className="card p-3 flex justify-between"><span>{p.period} · {p.item_count} items</span><span>₦{Number(p.amount_ngn).toLocaleString()} · {p.status}</span></li>
@@ -75,5 +75,5 @@ export default async function Me() {
 }
 
 function Box({ n, label }: { n: number | string; label: string }) {
-  return <div className="card p-4"><div className="font-serif text-3xl font-bold text-indigo">{n}</div><div className="text-sm text-muted">{label}</div></div>;
+  return <div className="card p-4"><div className="display text-[length:var(--step-3)] text-indigo">{n}</div><div className="text-sm text-muted">{label}</div></div>;
 }

@@ -50,7 +50,7 @@ export default async function Review({ searchParams }: { searchParams: Promise<{
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-10">
-      <h1 className="font-serif text-3xl font-bold">Review queue</h1>
+      <h1 className="display text-[length:var(--step-3)]">Review queue</h1>
       <p className="mt-2 text-muted">Nothing goes live, gets paid or enters a dataset until you approve it. Keyboard: <b>A</b> approve, <b>R</b> reject, <b>J</b>/<b>K</b> move.</p>
       <div className="mt-5 flex gap-2 flex-wrap">
         {languages.map((l) => (

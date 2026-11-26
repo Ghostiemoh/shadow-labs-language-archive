@@ -13,18 +13,22 @@ export default function Contribute() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12">
       <p className="label !text-clay">Contribute</p>
-      <h1 className="font-serif text-4xl font-bold max-w-3xl">Your language, in your voice, credited to you.</h1>
+      <h1 className="display text-[length:var(--step-4)] max-w-3xl">Your language, in your voice, credited to you.</h1>
       <p className="mt-4 text-lg text-ink/75 max-w-2xl leading-relaxed">
         We are building the most careful record of Nigerian languages anywhere, starting with Hausa, Yoruba and Igbo.
         Everything is checked by a native speaker before it goes live, and contributors are paid for accepted work.
       </p>
-      <div className="mt-10 grid sm:grid-cols-2 gap-4">
-        {ROLES.map((r) => (
-          <div key={r.t} className="card p-5"><div className="font-semibold text-lg">{r.t}</div><p className="mt-1 text-ink/75">{r.d}</p></div>
+      <dl className="mt-10 border-t border-ink/80 max-w-3xl">
+        {ROLES.map((r, i) => (
+          <div key={r.t} className="grid sm:grid-cols-[3rem_12rem_1fr] gap-x-4 gap-y-1 border-b border-line py-4">
+            <span className="display text-muted tabular-nums hidden sm:block">{String(i + 1).padStart(2, "0")}</span>
+            <dt className="font-semibold text-[1.05rem]">{r.t}</dt>
+            <dd className="text-ink-soft">{r.d}</dd>
+          </div>
         ))}
-      </div>
-      <div className="mt-10 card p-6 grid gap-3">
-        <h2 className="font-serif text-2xl font-bold">How to start</h2>
+      </dl>
+      <div className="mt-12 max-w-3xl grid gap-3">
+        <h2 className="display text-[length:var(--step-2)]">How to start</h2>
         <ol className="list-decimal pl-5 grid gap-1.5 text-ink/80">
           <li>Create an account and tick the languages you speak natively.</li>
           <li>Read and accept the contribution agreement (consent, rights, payment).</li>

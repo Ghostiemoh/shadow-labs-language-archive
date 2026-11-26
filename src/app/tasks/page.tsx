@@ -13,7 +13,7 @@ export default async function Tasks({ searchParams }: { searchParams: Promise<{ 
   const intro = (
     <div className="max-w-2xl">
       <p className="label !text-clay">Fix the AI</p>
-      <h1 className="font-serif text-4xl font-bold">Correct the machine. Teach it your language.</h1>
+      <h1 className="display text-[length:var(--step-4)]">Correct the machine. Teach it your language.</h1>
       <p className="mt-3 text-ink/75 leading-relaxed">
         Each task is one sentence an AI translated. Fix the text, record it in your own voice and tick what the AI got wrong.
         A reviewer for your language checks every task before it counts.

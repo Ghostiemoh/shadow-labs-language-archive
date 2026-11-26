@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/client";
 import type { Collection, Language, Profile } from "@/lib/types";
 
 const box = "card p-5";
-const h2 = "font-serif text-xl font-bold";
+const h2 = "display text-[length:var(--step-1)]";
 
 export function People({ people, languages }: { people: Profile[]; languages: Language[] }) {
   const router = useRouter();
@@ -32,7 +32,7 @@ export function People({ people, languages }: { people: Profile[]; languages: La
                 const on = p.languages.includes(l.code);
                 return (
                   <button key={l.code} onClick={() => update(p.id, { languages: on ? p.languages.filter((x) => x !== l.code) : [...p.languages, l.code] })}
-                    className={`text-xs rounded-full px-2 py-0.5 border ${on ? "bg-indigo text-white border-indigo" : "border-line"}`}>{l.code}</button>
+                    className={`text-xs rounded-full px-2 py-0.5 border ${on ? "bg-indigo text-surface border-indigo" : "border-line"}`}>{l.code}</button>
                 );
               })}
             </div>

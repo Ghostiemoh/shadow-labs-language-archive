@@ -25,7 +25,7 @@ export default async function CollectionPage({ params, searchParams }: {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <Link href="/browse" className="text-sm text-indigo">← All collections</Link>
-      <h1 className="mt-2 font-serif text-4xl font-bold">{col.name}</h1>
+      <h1 className="mt-2 display text-[length:var(--step-4)]">{col.name}</h1>
       <p className="mt-2 text-muted">{col.description}</p>
       <div className="mt-5 flex flex-wrap gap-2 text-sm">
         <Link href={`/browse/${collection}`} className={`btn !py-1 ${!missing ? "btn-primary" : "btn-ghost"}`}>All</Link>
