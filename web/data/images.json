@@ -1,0 +1,234 @@
+{
+  "goat": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/79777390/large.jpeg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/79777390",
+    "creator": "rBirdy",
+    "credit": "Photo: rBirdy, CC BY 4.0, via iNaturalist"
+  },
+  "sheep": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/632127459/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/632127459",
+    "creator": "Christopher Stephens",
+    "credit": "Photo: Christopher Stephens, CC BY-SA 4.0, via iNaturalist"
+  },
+  "cow": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/29102489/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/29102489",
+    "creator": "Paulius Rupšas",
+    "credit": "Photo: Paulius Rupšas, CC BY 4.0, via iNaturalist"
+  },
+  "dog": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/215940095/large.jpeg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/215940095",
+    "creator": "Afsar Nayakkan",
+    "credit": "Photo: Afsar Nayakkan, CC BY 4.0, via iNaturalist"
+  },
+  "cat": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/129658776/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/129658776",
+    "creator": "Von.grzanka",
+    "credit": "Photo: Von.grzanka, CC BY-SA 4.0, via iNaturalist"
+  },
+  "horse": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/46190755/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/46190755",
+    "creator": "Meghan Cassidy",
+    "credit": "Photo: Meghan Cassidy, CC BY-SA 4.0, via iNaturalist"
+  },
+  "donkey": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/266668199/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/266668199",
+    "creator": "Angela Marie",
+    "credit": "Photo: Angela Marie, CC BY 4.0, via iNaturalist"
+  },
+  "camel": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/86281945/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/86281945",
+    "creator": "Clément Bardot",
+    "credit": "Photo: Clément Bardot, CC BY-SA 4.0, via iNaturalist"
+  },
+  "chicken": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/955/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/955",
+    "creator": "Lip Kee Yap",
+    "credit": "Photo: Lip Kee Yap, CC BY-SA 4.0, via iNaturalist"
+  },
+  "duck": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/95268822/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/95268822",
+    "creator": "anonymous",
+    "credit": "Photo: anonymous, CC BY-SA 4.0, via iNaturalist"
+  },
+  "guinea-fowl": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/563684147/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/563684147",
+    "creator": "Darren Obbard",
+    "credit": "Photo: Darren Obbard, CC BY 4.0, via iNaturalist"
+  },
+  "pig": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/34825790/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/34825790",
+    "creator": "Cullen Hanks",
+    "credit": "Photo: Cullen Hanks, CC BY 4.0, via iNaturalist"
+  },
+  "lion": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/12610319/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/12610319",
+    "creator": "Luis G. Restrepo",
+    "credit": "Photo: Luis G. Restrepo, CC BY 4.0, via iNaturalist"
+  },
+  "leopard": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/90399697/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/90399697",
+    "creator": "Raja bandi",
+    "credit": "Photo: Raja bandi, CC BY 4.0, via iNaturalist"
+  },
+  "elephant": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/93674728/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/93674728",
+    "creator": "dhfischer",
+    "credit": "Photo: dhfischer, CC BY 4.0, via iNaturalist"
+  },
+  "hyena": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/123762771/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/123762771",
+    "creator": "Amelia Tauber",
+    "credit": "Photo: Amelia Tauber, CC BY 4.0, via iNaturalist"
+  },
+  "monkey": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/600792359/large.jpg",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.inaturalist.org/photos/600792359",
+    "creator": "iNaturalist user",
+    "credit": "Photo: iNaturalist user, CC0 1.0 (public domain), via iNaturalist"
+  },
+  "snake": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/19063248/large.jpeg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/19063248",
+    "creator": "Richard Stovall",
+    "credit": "Photo: Richard Stovall, CC BY 4.0, via iNaturalist"
+  },
+  "crocodile": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/288027350/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/288027350",
+    "creator": "Stephen Temple",
+    "credit": "Photo: Stephen Temple, CC BY-SA 4.0, via iNaturalist"
+  },
+  "tortoise": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/187720127/large.jpg",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.inaturalist.org/photos/187720127",
+    "creator": "Marius Burger",
+    "credit": "Photo: Marius Burger, CC0 1.0, via iNaturalist"
+  },
+  "frog": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/46547792/large.jpeg",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.inaturalist.org/photos/46547792",
+    "creator": "iNaturalist user",
+    "credit": "Photo: iNaturalist user, CC0 1.0 (public domain), via iNaturalist"
+  },
+  "fish": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/205345152/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/205345152",
+    "creator": "Rongrong Angkaew",
+    "credit": "Photo: Rongrong Angkaew, CC BY 4.0, via iNaturalist"
+  },
+  "bird": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/64914745/large.jpg",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/64914745",
+    "creator": "Bernard DUPONT",
+    "credit": "Photo: Bernard DUPONT, CC BY-SA 4.0, via iNaturalist"
+  },
+  "vulture": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/95588625/large.jpeg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/95588625",
+    "creator": "Christoph Moning",
+    "credit": "Photo: Christoph Moning, CC BY 4.0, via iNaturalist"
+  },
+  "rat": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/245798796/large.jpeg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/245798796",
+    "creator": "Jan Ebr & Ivana Ebrová",
+    "credit": "Photo: Jan Ebr & Ivana Ebrová, CC BY 4.0, via iNaturalist"
+  },
+  "bee": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/217394043/large.jpeg",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source_url": "https://www.inaturalist.org/photos/217394043",
+    "creator": "iNaturalist user",
+    "credit": "Photo: iNaturalist user, CC0 1.0 (public domain), via iNaturalist"
+  },
+  "mosquito": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/227569/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/227569",
+    "creator": "Don Loarie",
+    "credit": "Photo: Don Loarie, CC BY 4.0, via iNaturalist"
+  },
+  "ant": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/166199298/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/166199298",
+    "creator": "Nigel Main",
+    "credit": "Photo: Nigel Main, CC BY 4.0, via iNaturalist"
+  },
+  "rabbit": {
+    "url": "https://inaturalist-open-data.s3.amazonaws.com/photos/277644122/large.jpg",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_url": "https://www.inaturalist.org/photos/277644122",
+    "creator": "Andrew Murray",
+    "credit": "Photo: Andrew Murray, CC BY 4.0, via iNaturalist"
+  }
+}

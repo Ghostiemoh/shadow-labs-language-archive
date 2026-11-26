@@ -1,0 +1,30 @@
+{
+  "_note": "Starter Fix-the-AI tasks. ai_draft is a machine draft (engine claude-draft) and is expected to contain mistakes: contributors correct it, record it and tag the errors. Tasks with an empty draft get one from scripts/draft-tasks.mjs.",
+  "tasks": [
+    {"concept":"goat","en":"The goat is eating grass.","ha":"Akuya tana cin ciyawa.","yo":"Ewúrẹ́ ń jẹ koríko.","ig":"Ewu na-eri ahịhịa."},
+    {"concept":"dog","en":"The dog is sleeping under the tree.","ha":"Kare yana barci a ƙarƙashin bishiya.","yo":"Ajá ń sùn lábẹ́ igi.","ig":"Nkịta na-ehi ụra n'okpuru osisi."},
+    {"concept":"chicken","en":"The chicken laid an egg this morning.","ha":"Kaza ta yi ƙwai da safen nan.","yo":"Adìẹ yé ẹyin láàárọ̀ yìí.","ig":"Ọkụkọ yiri akwa n'ụtụtụ a."},
+    {"concept":"cow","en":"The herder took the cows to the river.","ha":"Makiyayi ya kai shanu bakin kogi.","yo":"Darandaran kó àwọn màálù lọ sí odò.","ig":"Onye na-azụ anụ kpọọrọ ehi gaa n'osimiri."},
+    {"concept":"horse","en":"My grandfather rode a white horse at the festival.","ha":"Kakana ya hau farin doki a lokacin hawan sallah.","yo":"Bàbá bàbá mi gun ẹṣin funfun níbi ọdún.","ig":"Nna nna m nọkwasịrị ịnyịnya ọcha n'oge emume."},
+    {"concept":"fish","en":"She bought fresh fish at the market.","ha":"Ta sayi sabon kifi a kasuwa.","yo":"Ó ra ẹja tuntun ní ọjà.","ig":"Ọ zụrụ azụ ọhụrụ n'ahịa."},
+    {"concept":"snake","en":"Be careful, there is a snake in the grass.","ha":"Ka kiyaye, akwai maciji a cikin ciyawa.","yo":"Ṣọ́ra, ejò wà nínú koríko.","ig":"Kpachara anya, agwọ dị n'ahịhịa."},
+    {"concept":"rice","en":"We are cooking rice and stew for the guests.","ha":"Muna dafa shinkafa da miya don baƙi.","yo":"À ń se ìrẹsì àti ọbẹ̀ fún àwọn àlejò.","ig":"Anyị na-esi osikapa na ofe maka ndị ọbịa."},
+    {"concept":"yam","en":"Yam is expensive this season.","ha":"Doya ta yi tsada a wannan lokaci.","yo":"Iṣu wọ́n ní àsìkò yìí.","ig":"Ji dị oke ọnụ n'oge a."},
+    {"concept":"water","en":"Please give me cold water.","ha":"Don Allah ka ba ni ruwan sanyi.","yo":"Jọ̀ọ́, fún mi ní omi tútù.","ig":"Biko nye m mmiri oyi."},
+    {"concept":"kola-nut","en":"The elders shared kola nut before the meeting.","ha":"Dattawa sun raba goro kafin taron.","yo":"Àwọn àgbààgbà pín obì kí ìpàdé tó bẹ̀rẹ̀.","ig":"Ndị okenye kesara ọjị tupu nzukọ ahụ."},
+    {"concept":"groundnut","en":"Groundnut harvest was good this year.","ha":"Girbin gyaɗa ya yi kyau a bana.","yo":"Ìkórè ẹ̀pà dára lọ́dún yìí.","ig":"Owuwe ihe ubi ahụekere dị mma n'afọ a."},
+    {"concept":"pepper","en":"This soup has too much pepper.","ha":"Wannan miya tana da barkono da yawa.","yo":"Ata pọ̀ jù nínú ọbẹ̀ yìí.","ig":"Ose dị oke n'ofe a."},
+    {"concept":"cap","en":"He wore a new cap to the wedding.","ha":"Ya sa sabuwar hula zuwa ɗaurin aure.","yo":"Ó dé fìlà tuntun lọ síbi ìgbéyàwó.","ig":"O yiri okpu ọhụrụ gaa agbamakwụkwọ."},
+    {"concept":"clay-pot","en":"The women make clay pots by hand.","ha":"Mata suna yin tukwane da hannu.","yo":"Àwọn obìnrin ń fi ọwọ́ mọ ìkòkò.","ig":"Ụmụ nwanyị na-eji aka akpụ ite."},
+    {"concept":"drum","en":"The drummer played until midnight.","ha":"Mai ganga ya yi kiɗa har tsakar dare.","yo":"Onílù lu ìlù títí di ọ̀gànjọ́ òru.","ig":"Onye ọkụ igba kụrụ igba ruo etiti abalị."},
+    {"concept":"mat","en":"Spread the mat so the visitors can sit.","ha":"Shimfiɗa tabarma don baƙi su zauna.","yo":"Tẹ́ ẹní kí àwọn àlejò lè jókòó.","ig":"Gbasaa ute ka ndị ọbịa nọdụ ala."},
+    {"concept":"broom","en":"Sweep the compound before evening.","ha":"Ka share gida kafin yamma.","yo":"Gbá àgbàlá kí ìrọ̀lẹ́ tó dé.","ig":"Zachaa ezi tupu anyasị."},
+    {"concept":"mortar","en":"She is pounding yam in the mortar.","ha":"Tana daka doya a turmi.","yo":"Ó ń gún iyán nínú odó.","ig":"Ọ na-asụ ji n'ikwe."},
+    {"concept":"lamp","en":"Light the lamp, the power has gone off.","ha":"Kunna fitila, an ɗauke wuta.","yo":"Tan àtùpà, iná mànàmáná ti lọ.","ig":"Mụnye oriọna, ọkụ eletrik apụọla."},
+    {"concept":"house","en":"Our house is near the mosque.","ha":"Gidanmu yana kusa da masallaci.","yo":"Ilé wa wà nítòsí mọ́ṣáláṣí.","ig":"Ụlọ anyị dị nso n'ụlọ alakụba."},
+    {"concept":"door","en":"Close the door, it is cold outside.","ha":"Rufe ƙofa, akwai sanyi a waje.","yo":"Ti ilẹ̀kùn, òtútù wà níta.","ig":"Mechie ụzọ, oyi na-atụ n'èzí."},
+    {"concept":"elephant","en":"An elephant never forgets.","ha":"Giwa ba ta mantuwa.","yo":"Erin kì í gbàgbé.","ig":"Enyi anaghị echefu ihe."},
+    {"concept":"lion","en":"The lion is called the king of the forest.","ha":"Ana kiran zaki sarkin daji.","yo":"Wọ́n ń pe kìnnìún ní ọba igbó.","ig":"A na-akpọ ọdụm eze ọhịa."},
+    {"concept":"tortoise","en":"The tortoise is the trickster in many folktales.","ha":"Kunkuru shi ne mai wayo a tatsuniyoyi da yawa.","yo":"Ìjàpá ni ọlọ́gbọ́n àrékérekè nínú ọ̀pọ̀ àlọ́.","ig":"Mbe bụ onye aghụghọ n'ọtụtụ akụkọ ifo."}
+  ]
+}
